@@ -1,0 +1,36 @@
+.menu_simple ul {
+    margin: 0;
+    padding: 0;
+    width: 145px;
+    float:left;
+}
+
+.menu_simple ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 20.5px 21px;
+    background-color: #006622;
+    display: block;
+    text-align: center;
+}
+
+.menu_simple a:hover {
+    color: white;
+    background-color: #4dff88;
+}
+.content {
+    float:left;
+    width: 70%;
+    margin:20px;
+    text-align: center;
+}
+.putCenter {
+    margin:  0 auto;
+    text-align: center;
+    display:inline-block;
+    box-sizing: border-box;
+}
+
+.buttonStyle {
+    margin: 10px auto;
+}
