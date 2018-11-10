@@ -4,16 +4,16 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
-  background-color: #66ff66;
+  background-color: #eeeeee;
 }
 body {
   display: flex;
 }
 #form-login {
   border-radius: 15px;
-  border: 1px solid #80ff80;
+  border: 1px solid grey;
   margin: auto;
-  background-color: #006622
+  background-color: #b3b3b3
 }
 .container {
   padding: 15px;
