@@ -10,16 +10,16 @@ body{
 
 .menu_simple ul li a {
     text-decoration: none;
-    color: white;
+    color: #000000;
     padding: 20.5px 21px;
-    background-color: #006622;
+    background-color: #b3b3b3;
     display: block;
     text-align: center;
 }
 
 .menu_simple a:hover {
     color: white;
-    background-color: #4dff88;
+    background-color: #4d4d4d;
 }
 .content {
     float:left;
@@ -38,7 +38,7 @@ body{
     margin: 10px auto;
 }
 button {
-    background-image: linear-gradient(to bottom, #006622, #4dff88);
+    background-image: linear-gradient(to bottom, #0047b3, #80b3ff);
     color: white;
     padding: 14px 40px;
     text-align: center;
@@ -55,10 +55,11 @@ input[type="password"]{
     box-sizing: border-box;
     border-radius: 15px;
     border: none;
-    color: #00cc00;
+    color: #333333;
 }
 h2{
-    color: green;
+    color: black;
+    margin-bottom: 1px;
 }
 h1{
     color: black;

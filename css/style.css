@@ -13,7 +13,7 @@ body {
   border-radius: 15px;
   border: 1px solid grey;
   margin: auto;
-  background-color: #b3b3b3
+  background-color: #b3b3b3;
 }
 .container {
   padding: 15px;
@@ -27,7 +27,7 @@ input[type="password"] {
   box-sizing: border-box;
   border-radius: 15px;
   border: none;
-  color: #00ff00;
+  color: #333333;
 }
 button {
   background-image: linear-gradient(to bottom, #0047b3, #80b3ff);
