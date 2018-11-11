@@ -1,5 +1,5 @@
 body{
-    background-color: #66ff66;
+    background-color: #eeeeee;
 }
 .menu_simple ul {
     margin: 0;
@@ -61,5 +61,9 @@ h2{
     color: green;
 }
 h1{
-    color: white;
+    color: black;
+    text-align: center;
+}
+label {
+    font-style: italic;
 }
