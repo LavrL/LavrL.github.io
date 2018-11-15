@@ -3,14 +3,56 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
+  font-family: "Arial";
 }
 body{
   display: flex;
+  background-color: #eeeeee;
 }
 #mainForm{
-  height: 200px;
-  width: 200px;
-  background: grey;
-  border: 10px;
+  height: 332px;
+  width: 326px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+  background-color: #ffffff;
+  border-top: 3px solid #fca311;
+  border-bottom: 5px solid #fca311;
 }
+
+#innerForm{
+  height: 232px;
+  width: 70%;
+  background-color: white;
+}
+#welcomeText{
+  font-size: 22px;
+  color: #000000;
+  font-family: "Arial";
+}
+#labelText{
+  font-size: 12px;
+  color: #14213d;
+  font-family: "Arial";
+}
+input[type="text"],
+input[type="password"] {
+  width: 193px;
+  height: 23px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  border: 1px solid #fca311;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+}
+button {
+  width: 193px;
+  height: 23px;
+  border-radius: 8px;
+  border: 1px solid #fca311;
+  background-color: #fca311;
+}
+
+
+
