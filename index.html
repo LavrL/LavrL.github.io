@@ -6,44 +6,35 @@
   <meta charset="UTF-8">
   <title>E-services for House Management - Login</title>
   <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="/scripts/login.js"></script>
 
-  <script type="text/javascript">
-      function readInputValues(event) {
-          event.preventDefault();
-          let user = document.getElementById("username1");
-          let pass = document.getElementById("password1");
-          console.log('Username - ' + user.value + ' , Password - ' + pass.value);
-          window.location.href = 'mainMenuProperties.html';
-      }
-  </script>
 </head>
 
 <body>
-
-
 <form id="mainForm">
   <div id="innerForm">
     <h3 id="welcomeText">Welcome</h3>
 
     <div>
-      <label id="labelText">username</label>
-      <input type="text" id="username1" name="username" autocomplete="username" required>
+      <label id="usernameLabel">username</label>
+      <input type="text" id="usernameInput" name="username" autocomplete="username" required>
     </div>
 
-    <div style="padding-top: 10px">
-      <label id="labelText">password</label>
-      <input type="text" id="username1" name="username" autocomplete="username" required>
+    <div id="divPadding">
+      <label id="passwordText">password</label>
+      <input type="text" id="passwordInput" name="password" autocomplete="password" required>
     </div>
 
-    <div style="padding-top: 10px">
-      <button type="submit">Login</button>
+    <div id="divPadding">
+      <button type="submit"><b>Login</b></button>
     </div>
 
+    <div id="divPadding">
+      <label id="registerLink"><a href="#">Register</a></label>
+    </div>
   </div>
 
 </form>
-
-
 </body>
 
 </html>
