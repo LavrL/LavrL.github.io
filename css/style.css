@@ -10,9 +10,8 @@ body{
   background-color: #eeeeee;
 }
 .mainForm{
-  height: 332px;
   width: 326px;
-  margin: 130px auto;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,8 +22,7 @@ body{
 }
 
 .innerForm{
-  align-self: center;
-  padding: 0;
+  margin: 20px;
   background-color: grey;
 }
 .welcomeText{
