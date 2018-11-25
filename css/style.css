@@ -97,5 +97,16 @@ a:link{
 .usernameLabel{
   padding-top:15px;
 }
-
-
+.required label:after {
+  content: " *";
+  color: black;
+}
+.buttonRegister {
+  padding-top: 15px;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #fca311;
+  background-color: #fca311;
+  background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+}
