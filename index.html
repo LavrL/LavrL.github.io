@@ -13,10 +13,13 @@
 <body>
 <form class="mainForm">
   <div class="innerForm">
-    <h3 class="welcomeText">Welcome</h3>
-
+    
+    <div class="welcomeText">
+      <label>Welcome</label>
+    </div>
+  
     <div>
-      <label id="usernameLabel">username</label>
+      <label class="usernameLabel">username</label>
       <input type="text" id="usernameInput" name="username" autocomplete="on" required>
     </div>
 
@@ -25,12 +28,12 @@
       <input type="text" id="passwordInput" name="password" autocomplete="on" required>
     </div>
 
-    <div class="labelDesign">
-      <button type="submit"><b>Login</b></button>
+    <div class="loginDesignButton">
+      <button type="submit"><span class="loginDesignText">Login</span></button>
     </div>
 
-    <div class="labelDesign">
-      <label id="registerLink"><a href="#">Register</a></label>
+    <div class="registerDesignStyle">
+      <label class="registerDesignText"><a href="#">Register</a></label>
     </div>
   </div>
 
