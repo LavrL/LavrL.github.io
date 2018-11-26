@@ -12,47 +12,35 @@
   <form class="mainForm">
     <div class="innerForm">
       
-      <div class="welcomeText">
+      <div class="headingText">
         <label>Register Form</label>
       </div>
       
-      <div >
-        <label class="usernameLabel required">Login</label>
-        <input type="text" id="usernameInput" name="username" autocomplete="on" required>
+      <div class="required">
+        <label for="loginInput" class="labelDesign">Login</label>
+        <input type="text" id="loginInput" name="username" autocomplete="on" required>
       </div>
 
-      <div>
-        <label class="usernameLabel required">Password</label>
-        <input type="text" id="usernameInput" name="username" autocomplete="on" required>
+      <div class="labelDesign required">
+        <label for="passwordInput" class="styleLabel required">Password</label>
+        <input type="text" id="passwordInput" name="username" autocomplete="on" required>
       </div>
 
-      <div>
-        <label class="usernameLabel required">Password</label>
-        <input type="text" id="usernameInput" name="username" autocomplete="on" required>
+      <div class="labelDesign required">
+        <label for="passwordRepeatInput">Repeat Password</label>
+        <input type="text" id="passwordRepeatInput" name="username" autocomplete="on" required>
       </div>
 
-      <div>
-        <label class="usernameLabel required">Repeat Password</label>
-        <input type="text" id="usernameInput" name="username" autocomplete="on" required>
+      <div class="labelDesign">
+        <label for="nameInput" class="styleLabel ">Name</label>
+        <input type="text" id="nameInput" name="username" autocomplete="on" required>
       </div>
 
-      <div>
-        <label class="usernameLabel required">Name</label>
-        <input type="text" id="usernameInput" name="username" autocomplete="on" required>
-      </div>
-
-      <div>
-        <div >
-          <input type="button" class="buttonRegister" value="Register">
-          <label ><a href="#">Register</a></label>
-        </div>
-      </div>
-
-      <div class="registerDesignStyle">
-        <label class="registerDesignText"><a href="#">Register</a></label>
+      <div class="labelDesign">
+        <input type="button" class="buttonRegister" value="Register" onclick="window.location.href='index.html'">
+        <label>Have an account? <a href="index.html"><label>login</label></a></label>
       </div>
     </div>
-    
   </form>
 </body>
 

@@ -24,7 +24,7 @@ body{
   margin: 50px;
   background-color: white;
 }
-.welcomeText{
+.headingText{
   font-size: 22px;
   color: #14213d;
   font-family: "Arial MT","Times New Roman", serif;
@@ -81,7 +81,7 @@ a:link{
 .loginDesignText{
   width: 35px;
   height: 14px;
-  font-family: "Arial MT";
+  font-family: "Arial MT","Times New Roman", serif;;
   font-size: 14px;
   font-weight: bold;
 }
@@ -94,15 +94,14 @@ a:link{
   font-weight: 400;
   text-decoration: underline;
 }
-.usernameLabel{
+.styleLabel{
   padding-top:15px;
 }
 .required label:after {
   content: " *";
   color: black;
 }
-.buttonRegister {
-  padding-top: 15px;
+input[type="button"].buttonRegister {
   height: 30px;
   border-radius: 8px;
   font-size: 14px;
