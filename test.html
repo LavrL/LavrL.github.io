@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>E-services for House Management - Login</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="/scripts/login.js"></script>
+
+  <style type="text/css">
+    .field + .field {
+      margin-top: 10px;
+    }
+
+    .field .fieldLabel {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .field .fieldInput {
+      border-right-width: 10px;
+      display: block;
+      width: 100%;
+    }
+
+    .input {
+      border: 1px solid black;
+    }
+
+    .link {
+      color: black;
+      text-decoration: underline;
+    }
+
+    .loginForm .register {
+
+    }
+
+    .loginForm .heading {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .login {
+      display: block;
+    }
+
+    .container {
+      background: rgba(0,0,0,.3);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup {
+      width: 30vw;
+      min-width: 300px;
+      background: white;
+      padding: 30px 50px;
+    }
+  </style>
+</head>
+<body>
+<h1></h1>
+<div class="container">
+  <form class="popup loginForm">
+
+    <h1 class="heading">Welcome</h1>
+
+    <div class="field">
+      <label class="fieldLabel" for="usernameInput">username</label>
+      <input class="input fieldInput" type="text" id="usernameInput" name="username" autocomplete="on" required>
+    </div>
+
+    <div class="field">
+      <label class="fieldLabel" for="passwordInput">password</label>
+      <input class="input fieldInput" type="text" id="passwordInput" name="password" autocomplete="on" required>
+    </div>
+
+    <button class="login button" type="submit">Login</button>
+
+    <a href="#" class="link register">Register</a>
+  </form>
+
+</div>
+</body>
+
+</html>
