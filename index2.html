@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
   <title>E-services for House Management - Login</title>
- <!-- <link rel="stylesheet" href="css/style.css"> -->
- <!-- <script src="/scripts/login.js"></script> -->
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- <script src="/scripts/login.js"></script> -->
   <style type="text/css">
-    .container{
-      background: grey;
+    body{
+      display: flex;
+      background-color: #eeeeee;
+    }
+    .container {
       position: fixed;
       top: 0;
       right: 0;
@@ -19,16 +22,43 @@
       align-items: center;
       justify-content: center;
     }
-    .popup{
+
+    .popup {
       width: 300px;
       background: white;
       padding: 30px 50px;
+      box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3), inset 0 -5px 0 #fca311, inset 0 5px 0 #fca311;
+      border-top: 5px solid #fca311;
+      border-bottom: 5px solid #fca311;
     }
-    .Login .heading{
+    .login{
+      display: block;
+    }
+    .login .heading {
       font-size: 22px;
       color: #14213d;
-      font-family: "Arial MT","Times New Roman", serif;
+      font-family: "Arial MT", "Times New Roman", serif;
       font-weight: 400;
+    }
+
+    .field .label {
+      width: 50px;
+      height: 14px;
+      display: block;
+      font-size: 14px;
+      color: #14213d;
+      font-weight: 400;
+      font-family: "Arial MT", "Times New Roman", serif;
+    }
+    .field .input {
+      width: 70%;
+      height: 23px;
+      border-radius: 2px;
+      background-color: #ffffff;
+      border: 1px solid #14213d;
+    }
+    .field + .field{
+      margin-top: 10px;
     }
   </style>
 
@@ -36,10 +66,21 @@
 
 <body>
 <div class="container">
-  <form class="popup Login">
-    <h1 class="Login heading">Welcome</h1>
-  </form>
+  <form class="popup login">
+    <h1 class="heading">Welcome</h1>
 
+
+    <div class="field">
+      <label class="label" for="usernameInput">username</label>
+      <input class="input" type="text" id="usernameInput" name="username" autocomplete="on" required>
+    </div>
+
+    <div class="field">
+      <label class="label" for="passwordInput">password</label>
+      <input class="input" type="text" id="passwordInput" name="password" autocomplete="on" required>
+    </div>
+
+  </form>
 </div>
 
 
