@@ -6,38 +6,35 @@
   <meta charset="UTF-8">
   <title>E-services for House Management - Login</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="/scripts/login.js"></script>
-
+  <!-- <script src="/scripts/login.js"></script> -->
 </head>
 
 <body>
-<form class="mainForm">
-  <div class="innerForm">
-    
-    <div class="headingText">
-      <label>Welcome</label>
-    </div>
-  
-    <div>
-      <label for="usernameInput" class="styleLabel">username</label>
-      <input type="text" id="usernameInput" name="username" autocomplete="on" required>
+<div class="container">
+  <form class="popup login">
+    <h1 class="heading">Welcome</h1>
+
+    <div class="field">
+      <label class="label" for="usernameInput">username</label>
+      <input class="input" type="text" id="usernameInput" name="username" autocomplete="on" required>
     </div>
 
-    <div class="styleLabel">
-      <label for="passwordInput">password</label>
-      <input type="text" id="passwordInput" name="password" autocomplete="on" required>
+    <div class="field">
+      <label class="label" for="passwordInput">password</label>
+      <input class="input" type="text" id="passwordInput" name="password" autocomplete="on" required>
     </div>
 
-    <div class="loginDesignButton">
-      <button type="submit"><span class="loginDesignText">Login</span></button>
+    <div class="field">
+      <button class="login button" type="submit">Login</button>
     </div>
 
-    <div class="registerDesignStyle">
-      <label class="registerDesignText"><a href="#">Register</a></label>
+    <div class="field">
+      <a href="#" class="link register">Register</a>
     </div>
-  </div>
 
-</form>
+  </form>
+</div>
+
 </body>
 
 </html>
