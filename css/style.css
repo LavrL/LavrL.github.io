@@ -18,7 +18,6 @@ body{
   width: 226px;
   background: white;
   padding: 50px;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3), inset 0 -5px 0 #fca311, inset 0 5px 0 #fca311;
   border-top: 5px solid #fca311;
   border-bottom: 5px solid #fca311;
 }
@@ -48,6 +47,10 @@ body{
   background-color: #ffffff;
   border: 1px solid #fca311;
 }
+.input:focus {
+    border: 1px solid #fca311;
+    outline: none;
+}
 .login .button {
   width: 100%;
   height: 30px;
@@ -56,6 +59,7 @@ body{
   border: 1px solid #fca311;
   background-color: #fca311;
   background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+  outline:none;
 }
 .link {
   color: black;  
