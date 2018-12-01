@@ -4,44 +4,48 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
-  <title>E-services for House Management - Register</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>E-services for House Management - Login</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- <script src="/scripts/login.js"></script> -->
 </head>
 
 <body>
-  <form class="mainForm">
-    <div class="innerForm">
+  <div class="container">
+    <form class="popup login">
+
+      <h1 class="heading">Register Form</h1>
+
+      <div class="field">
+        <label class="label" for="loginInput">login</label>
+        <input class="input" type="text" id="loginInput" name="login" autocomplete="on" required>
+      </div>
+
+      <div class="field">
+        <label class="label" for="passwordInput">password</label>
+        <input class="input" type="password" id="passwordInput" name="password" autocomplete="on" required>
+      </div>
+
+      <div class="field">
+        <label class="label" for="passwordRepeatInput">repeat password</label>
+        <input class="input" type="password" id="passwordRepeatInput" name="passwordRepeat" autocomplete="on" required>
+      </div>
+
+      <div class="field">
+        <label class="label" for="name">name</label>
+        <input class="input" type="text" id="name" name="name" autocomplete="on" required>
+      </div>
+
+      <div class="field">
+        <button class="login2 buttonRegister buttonAction" type="submit">Register</button>
+        <h3>Have an account? <a href="index.html">login</a></h3>
+      </div>
+
       
-      <div class="headingText">
-        <label>Register Form</label>
-      </div>
-      
-      <div class="required">
-        <label for="loginInput" class="labelDesign">Login</label>
-        <input type="text" id="loginInput" name="username" autocomplete="on" required>
-      </div>
+    
 
-      <div class="labelDesign required">
-        <label for="passwordInput" class="styleLabel required">Password</label>
-        <input type="text" id="passwordInput" name="username" autocomplete="on" required>
-      </div>
+    </form>
+  </div>
 
-      <div class="labelDesign required">
-        <label for="passwordRepeatInput">Repeat Password</label>
-        <input type="text" id="passwordRepeatInput" name="username" autocomplete="on" required>
-      </div>
-
-      <div class="labelDesign">
-        <label for="nameInput" class="styleLabel ">Name</label>
-        <input type="text" id="nameInput" name="username" autocomplete="on" required>
-      </div>
-
-      <div class="labelDesign">
-        <input type="button" class="buttonRegister" value="Register" onclick="window.location.href='index.html'">
-        <label>Have an account? <a href="index.html"><label>login</label></a></label>
-      </div>
-    </div>
-  </form>
 </body>
 
 </html>
