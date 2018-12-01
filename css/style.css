@@ -71,3 +71,25 @@ body{
 .buttonAction{
   cursor: pointer;
 }
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: #eeeeee;
+  }
+  .popup {
+    width: 100%;
+    padding: 50px 60px;
+  }
+  .login .heading{
+    font-size: 28px;
+  }
+  .field {
+    margin-top: 25px;
+  }
+  .field .input {
+    height: 30px;
+  }
+  .login .button {
+    height: 50px;
+    font-size: 18px;
+  }
+}
