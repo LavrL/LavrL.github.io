@@ -54,6 +54,7 @@ body{
 .login .button {
   width: 100%;
   height: 30px;
+  font-size: 14px;
   border-radius: 8px;
   border: 1px solid #fca311;
   background-color: #fca311;
