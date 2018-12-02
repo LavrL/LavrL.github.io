@@ -40,6 +40,7 @@ body{
 .field .label {
   height: 14px;
   display: block;
+  margin-bottom: 1px;
   color: #14213d;
   font-weight: 400;
 }
@@ -50,8 +51,10 @@ body{
   background-color: #ffffff;
   border: 1px solid #14213d;
 }
-.field h3 {
-  text-align: right;
+.field .fieldText {
+  text-align: left;
+  font-size: 16px;
+  margin: 10px 0;
 }
 .input:focus {
   border: 1px solid #fca311;
@@ -68,12 +71,9 @@ body{
   outline:none;
 }
 .link {
-  color: black;  
-}
-.register {
+  color: black;
   text-decoration: underline;
-  font-size: 16px;
-  
+  font-size: 16px;  
 }
 .buttonAction{
   cursor: pointer;
