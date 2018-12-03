@@ -18,20 +18,28 @@ body{
     text-align: left;
     font-size: 24px;
     padding-left: 10%;
+    font-weight: 500;
+}
+.menuHeading .left2 {
+    width: 25%;
+    text-align: left;
+    font-size: 24px;
+    
+    font-weight: 500;
 }
 .menuHeading .right {
     width: 25%;
     text-align: right;
-    font-size: 20px;
-    
+    font-size: 16px;
+    padding-right: 10%;
 }
 
-
-.menu_simple ul {
-    margin: 0;
-    padding: 0;
+.menuRight ul {
+    
     width: 145px;
+    height: 100%;
     float:left;
+    background-color: white;
 }
 
 .menu_simple ul li a {
