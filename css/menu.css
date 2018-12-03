@@ -1,0 +1,93 @@
+body{
+    background-color: #eeeeee;
+    font-family: "Arial", "Times New Roman", serif;
+}
+.menuHeading{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 5px solid #fca311;
+}
+.menuHeading .container {
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 26px;
+}
+.menuHeading .left {
+    width: 75%;
+    text-align: left;
+    font-size: 24px;
+    padding-left: 10%;
+}
+.menuHeading .right {
+    width: 25%;
+    text-align: right;
+    font-size: 20px;
+    
+}
+
+
+.menu_simple ul {
+    margin: 0;
+    padding: 0;
+    width: 145px;
+    float:left;
+}
+
+.menu_simple ul li a {
+    text-decoration: none;
+    color: #000000;
+    padding: 20.5px 21px;
+    background-color: #b3b3b3;
+    display: block;
+    text-align: center;
+}
+
+.menu_simple a:hover {
+    color: white;
+    background-color: #4d4d4d;
+}
+.content {
+    float:left;
+    width: 80%;
+    text-align: center;
+    display: block;
+}
+.putCenter {
+    margin:  0 auto;
+    text-align: center;
+    display:inline-block;
+    box-sizing: border-box;
+}
+
+.buttonStyle {
+    margin: 10px auto;
+}
+button {
+    background-image: linear-gradient(to bottom, #0047b3, #80b3ff);
+    color: white;
+    padding: 14px 40px;
+    text-align: center;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+input[type="text"],
+input[type="password"]{
+    background-color: #d9d9d9;
+    width: 20%;
+    padding: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: none;
+    color: #333333;
+}
+h2{
+    color: black;
+    margin-bottom: 1px;
+}
+
+label {
+    font-style: italic;
+}
