@@ -9,7 +9,6 @@
   <style type="text/css">
     body,
     html {
-      height: 100%;
       margin: 0;
     }
 
@@ -20,21 +19,22 @@
       height: 100%;
       left: 0;
       top: 0;
+      margin-top: 60px;
     }
 
     ul {
       list-style: none;
     }
 
-    section {
+    .section {
       background: #eeeeee;
-      margin-top: 60px;
+      
       height: 100%;
       padding-bottom:100px;
       padding-top:50px;
     }
 
-    header {
+    .header {
       background: #eeeeee;
       height: 60px;
       position: fixed;
@@ -43,6 +43,7 @@
       left: 0;
       text-align: center;
       border-bottom: 5px solid #fca311;
+      z-index:99;
     }
 
     .container {
@@ -75,21 +76,21 @@
       </ul>
     </nav>
   </aside>
-  <header>
+  <div class="header">
     <div style="width: 40%;float:left;padding-top: 20px;">my awesome webservices</div>
     <div style="width: 60%; float:right;padding-top: 20px;">logout</div>
-  </header>
+  </div>
   <div class="container">
-    <section>
-      <div>Text</div>
-      <div>Text</div>
-      <div>Text</div>
-      <div>Text</div>
-      <div>Text</div>
-      <div>Text</div>
-      <div>Text</div>
-      <div>Text</div>
-    </section>
+    <div class="section">
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut ex fringilla, 
+        ornare orci quis, malesuada leo. Donec et tellus a justo pharetra egestas eu a mauris. Sed mauris mauris, lobortis quis porttitor eget, rhoncus nec lacus. Fusce at orci at urna laoreet ullamcorper. Maecenas ac ex vitae nisl interdum iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. In nec mollis sapien. Nam sodales diam in lacus sodales, bibendum luctus dolor eleifend. Phasellus pulvinar libero id arcu dignissim, non rhoncus quam faucibus. Sed id nisi in enim hendrerit consequat. Aenean quis sem vulputate, accumsan enim eu, volutpat purus.
+         Etiam accumsan, nunc dictum condimentum sollicitudin, ligula odio consequat libero, fermentum fringilla lorem erat in mauris.
+         Sed molestie, massa non condimentum congue, mi ipsum laoreet sem, 
+        suscipit volutpat dolor nulla ac lacus. Donec tincidunt ligula neque, sed laoreet nulla dignissim nec. 
+        Aenean molestie egestas cursus. Morbi dignissim dui nec purus ultrices suscipit. Proin elit velit, scelerisque pretium orci id, 
+        sollicitudin tristique arcu. Sed vitae lectus eget velit ultrices bibendum. Proin a massa ut libero laoreet dignissim ut at nisi. 
+        Nunc sed tellus eget mauris pretium rutrum ut non tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
+    </div>
   </div>
 </body>
 
