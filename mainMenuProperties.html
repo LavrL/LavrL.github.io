@@ -29,20 +29,16 @@
     .header {
       background: #eeeeee;
       padding: 20px;
-      display: flex;
       width:100%;
-      align-items: center;
-      justify-content: space-between;
-      position: fixed;
       border-bottom: 5px solid #fca311;
       z-index:99;
-      padding-left: 100px;
     }
     .container {
       height: 100%;
       display: flex;
-      padding-top:50px;
       background-color: white;
+      width:100%;
+      z-index: 99;
     }
     .column {
       display: flex;
@@ -64,13 +60,20 @@
       overflow-y:auto;
       padding: 40px;
     }
+    .myStyle{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   </style>
 </head>
 
 <body>
+  <div class="myStyle">
  <div class="header">
     <div class="top-right">my awesome webservices</div>
     <div class="top-left">logout</div>
+    
   </div>
   <div class="container">
     <div class="column left">
@@ -93,6 +96,7 @@
         nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus ullamcorper
         urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p></div>
     </div>
+  </div>
   </div>
 </body>
 </html>
