@@ -38,7 +38,7 @@
     .container {
       height: 100%;
       display: flex;
-      background-color: white;
+      background-color: #eeeeee;
       width:100%;
     }
     .column {
@@ -62,26 +62,77 @@
       display: flex;
       flex-direction: column;
     }
+
+    @media screen and (max-width:575px) {
+      .container {
+        display: block;
+      }
+      .header {
+        background: #eeeeee;
+        padding: 20px;
+        width:100%;
+        border-bottom: 5px solid #fca311;
+        display: inline-block;
+      }
+      .column {
+        display: flex;
+        flex-direction: column;
+      }
+      .right {
+        width:100%;
+        margin: 0;
+        height: 100%;
+        
+      }
+      .left {
+        background-color: #eeeeee;
+        align-items: center;
+        border-bottom: 2px solid black;
+        
+      }
+      .menuLeftBar {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding:0;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .menuLeftBar li {
+        padding-right: 15px;
+      }
+      .bottom {
+        padding: 20px;
+        overflow-y: auto;
+      }
+      .top-right {
+        font-size: 24px;
+        display: block;
+        float: left;
+      }
+      .top-left{
+        float: right;
+        display: block;
+      }
+      .space1 {
+        padding-right: 5px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="myStyle">
- <div class="header">
-    <div class="top-right">my awesome webservices</div>
-    <div class="top-left">logout</div>
-    
+<div class="myStyle">
+  <div class="header">
+    <div class="top-right">My Awesome Webservices</div>
+    <div class="top-left">logout</div>  
   </div>
   <div class="container">
     <div class="column left">
       <div class="bottom">
         <ul class="menuLeftBar">
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-          <li>Item 5</li>
-          <li>Item 6</li>
+          <li class="space1">Profile</li>
+          <li>Properties</li>
         </ul>
       </div>
     </div>
@@ -91,9 +142,21 @@
         Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in
         faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus
         nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus ullamcorper
+        urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius
+        pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper.
+        Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in
+        faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus
+        nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus ullamcorper
+        urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius
+        pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper.
+        Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in
+        faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus
+        nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus ullamcorper
         urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p></div>
     </div>
   </div>
-  </div>
+</div>
 </body>
 </html>
