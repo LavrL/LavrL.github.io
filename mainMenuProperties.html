@@ -18,7 +18,7 @@
       display: flex;
       overflow: hidden;
     }
-    #checkbox1,
+    .checkbox1,
     .toggle {
       display: none;
     }
@@ -124,12 +124,12 @@
       .toggle:hover {
         background: #cecece;
       }
-      #checkbox1:checked + label .demo li {
+      .checkbox1:checked + .demo li {
         opacity: 1;
         visibility: visible;
         transition: all .7s linear;
       }
-      #checkbox1:checked + label .demo {
+      .checkbox1:checked + .demo {
         height: 100px;
       }
       .menu {
@@ -173,8 +173,7 @@
   <div class="container">
     <div class="column column_left">
       <div class="bottom menuBar">
-        <input type="checkbox" id="checkbox1" />
-          <label for="checkbox1">
+          <label><input type="checkbox" class="checkbox1">
             <ul class="menu demo menuBar">
               <li><a href="#">Profile</a></li>
               <li><a href="#">Properties</a></li>
