@@ -52,7 +52,7 @@ body {
     border: 1px solid #14213d;
 }
 
-.input-form--input-text-fieldText {
+.input-form__fieldText {
     text-align: left;
     font-size: 16px;
     margin: 10px 0;
