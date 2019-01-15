@@ -10,27 +10,25 @@
 </head>
 
 <body>
-<div class="container">
-  <form class="popup login">
+<div class="main-page-container">
+  <form class="input-form">
 
-    <h1 class="heading">Welcome</h1>
+    <h1 class="input-form__title input-form__title_big">Welcome</h1>
 
-    <div class="field">
-      <label class="label" for="usernameInput">username</label>
-      <input class="input" type="text" id="usernameInput" name="username" autocomplete="on" required>
+    <div class="input-form__field_common">
+      <label class="input-form__text-label">username<input class="input-form__text-input" type="text"  name="username" autocomplete="on" required></label>
     </div>
 
-    <div class="field">
-      <label class="label" for="passwordInput">password</label>
-      <input class="input" type="password" id="passwordInput" name="password" autocomplete="on" required>
+    <div class="input-form__field_common">
+      <label class="input-form__text-label">password<input class="input-form__text-input" type="password" name="password" autocomplete="on" required></label>
     </div>
 
-    <div class="field">
-      <button class="login button buttonAction" type="submit">Login</button>
+    <div class="input-form__field_common">
+      <button class="input-form__button input-form__button_orange" type="submit">Login</button>
     </div>
 
-    <div class="field">
-      <a href="register.html" class="link">Register</a>
+    <div class="input-form__field_common">
+      <a href="register.html" class="input-form__link input-form__link_underlined">Register</a>
     </div>
 
   </form>
