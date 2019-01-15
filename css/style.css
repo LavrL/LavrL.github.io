@@ -1,102 +1,116 @@
-body{
-  display: flex;
-  background-color: #eeeeee;
-  font-family: "Arial", "Times New Roman", serif;
-  font-size: 14px;
-}
-.container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body {
+    background-color: #eeeeee;
+    font-family: "Arial", "Times New Roman", serif;
 }
 
-.popup {
-  width: 226px;
-  background: white;
-  padding: 50px;
-  border-top: 5px solid #fca311;
-  border-bottom: 5px solid #fca311;
+.main-page-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.login{
-  display: block;
+
+.input-form {
+    width: 226px;
+    background: white;
+    padding: 50px;
+    border-top: 5px solid #fca311;
+    border-bottom: 5px solid #fca311;
+    display: block;
 }
-.login2{
-  display: inline-block;
+
+.input-form__title {
+    color: #14213d;
+    margin: 0;
 }
-.login .heading {
-  font-size: 22px;
-  color: #14213d;
-  font-weight: 400;
-  margin: 0;
+
+.input-form__title_big {
+    font-size: 22px;
+    font-weight: 400;
 }
-.field {
-  margin-top: 10px;
+
+.input-form__field_common {
+    margin-top: 10px;
+    display: block;
+    font-size: 14px;
 }
-.field .label {
-  height: 14px;
-  display: block;
-  margin-bottom: 1px;
-  color: #14213d;
-  font-weight: 400;
+
+.input-form__text-label {
+    color: #14213d;
+    font-weight: 400;
 }
-.field .input {
-  width: 100%;
-  height: 23px;
-  border-radius: 2px;
-  background-color: #ffffff;
-  border: 1px solid #14213d;
-}
-.field .fieldText {
-  text-align: left;
-  font-size: 16px;
-  margin: 10px 0;
-}
-.input:focus {
-  border: 1px solid #fca311;
-  outline: none;
-}
-.login .button {
-  width: 100%;
-  height: 30px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid #fca311;
-  background-color: #fca311;
-  background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
-  outline:none;
-}
-.link {
-  color: black;
-  text-decoration: underline;
-  font-size: 16px;  
-}
-.buttonAction{
-  cursor: pointer;
-}
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: #eeeeee;
-  }
-  .popup {
+
+.input-form__text-input {
     width: 100%;
-    padding: 50px 60px;
-  }
-  .login .heading{
-    font-size: 28px;
-  }
-  .field {
-    margin-top: 25px;
-  }
-  .field .input {
+    height: 23px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: 1px solid #14213d;
+}
+
+.input-form--input-text-fieldText {
+    text-align: left;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.input-form__text-input:focus {
+    border: 1px solid #fca311;
+    outline: none;
+}
+
+.input-form__button {
+    width: 100%;
     height: 30px;
-  }
-  .login .button {
-    height: 50px;
-    font-size: 18px;
-  }
+}
+
+.input-form__button_orange {
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #fca311;
+    background-color: #fca311;
+    background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+    outline: none;
+    cursor: pointer;
+}
+
+.input-form_link {
+    color: black;
+    font-size: 16px;
+}
+
+.input-form__link_underlined {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: #eeeeee;
+    }
+
+    .input-form {
+        width: 100%;
+        padding: 50px 60px;
+    }
+
+    .input-form__title_big {
+        font-size: 28px;
+    }
+
+    .input-form__field_common {
+        margin-top: 25px;
+    }
+
+    .input-form__text-input {
+        height: 30px;
+    }
+
+    .input-form__button {
+        height: 50px;
+        font-size: 18px;
+    }
 }
