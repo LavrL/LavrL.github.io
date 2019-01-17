@@ -15,19 +15,21 @@
 
     <h1 class="input-form__title input-form__title_big">Welcome</h1>
 
-    <div class="input-form__field_common">
-      <label class="input-form__text-label">username<input class="input-form__text-input" type="text"  name="username" autocomplete="on" required></label>
+    <label class="input-form__field">
+      <span class="input-form__text-label">username</span>
+      <input class="input-form__text-input" type="text" name="username" autocomplete="on" required>
+    </label>
+
+    <label class="input-form__field">
+      <span class="input-form__text-label">password</span>
+      <input class="input-form__text-input" type="password" name="password" autocomplete="on" required>
+    </label>
+
+    <div class="input-form__field">
+      <button class="input-form__button input-form__button_orange" type="button" onclick="window.location.href='mainMenuProperties.html'">Login</button>
     </div>
 
-    <div class="input-form__field_common">
-      <label class="input-form__text-label">password<input class="input-form__text-input" type="password" name="password" autocomplete="on" required></label>
-    </div>
-
-    <div class="input-form__field_common">
-      <button class="input-form__button input-form__button_orange" type="submit">Login</button>
-    </div>
-
-    <div class="input-form__field_common">
+    <div class="input-form__field">
       <a href="register.html" class="input-form__link input-form__link_underlined">Register</a>
     </div>
 
