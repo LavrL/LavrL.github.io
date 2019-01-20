@@ -44,7 +44,7 @@
 
     .overlay a:hover,
     .overlay a:focus {
-      color: gray;
+      color: #f1f1f1;
     }
 
     .overlay .closebtn {
@@ -55,7 +55,7 @@
       display: none;
     }
 
-    .header__menu-hamburger_left {
+    .top-menu {
       display: none;
     }
 
@@ -110,15 +110,6 @@
 
     }
 
-    .header__title_middle {
-      font-size: 24px;
-    }
-
-    .header__title_logout {
-      font-size: 24px;
-    }
-
-
     @media screen and (max-width:575px) {
       .mainStyle .container {
         display: flex;
@@ -147,14 +138,14 @@
         padding: 0;
       }
 
-      .header__title_middle {
+      .mainStyle .header .top-right {
         font-size: 24px;
         display: block;
         text-align: center;
         flex: 1;
       }
 
-      .header__title_logout {
+      .mainStyle .header .top-left {
         float: right;
         display: none;
       }
@@ -206,7 +197,7 @@
         display: block;
       }
 
-      .header__menu-hamburger_left {
+      .top-menu {
         display: block;
         font-size: 20px;
         cursor: pointer
@@ -218,9 +209,9 @@
 <body>
   <div class="mainStyle">
     <div class="header">
-      <div class="header__menu-hamburger_left"><span onclick="openNav()">&#9776; </span></div>
-      <div class="header__title_middle">My Awesome Webservices</div>
-      <div class="header__title_logout">logout</div>
+      <div class="top-menu"><span onclick="openNav()">&#9776; </span></div>
+      <div class="top-right">My Awesome Webservices</div>
+      <div class="top-left">logout</div>
     </div>
     <div class="container">
       <div class="column column_left">
