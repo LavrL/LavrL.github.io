@@ -5,3 +5,9 @@ function readInputValues(event) {
     console.log('Username - ' + user.value + ' , Password - ' + pass.value);
     window.location.href = 'mainMenuProperties.html';
 }
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}

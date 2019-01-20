@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>E-services for House Management - main menu properties</title>
+  <script src="/scripts/login.js"></script>
+
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .overlay {
+      height: 100%;
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+      color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+      display: none;
+    }
+
+    .header1Parent {
+      text-align: right;
+    }
+
+    .top-menu {
+      display: none;
+    }
+
+    .mainStyle .header {
+      background: #eeeeee;
+      padding: 20px;
+      width: 100%;
+      border-bottom: 5px solid #fca311;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .mainStyle .container {
+      height: 100%;
+      display: flex;
+      background-color: white;
+      width: 100%;
+    }
+
+    .mainStyle .container .column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mainStyle .container .column_left {
+      background-color: #eeeeee;
+    }
+
+    .mainStyle .container .column_right {
+      background-color: #eeeeee;
+      margin-top: 20px;
+      margin-left: 20px;
+      width: 50%;
+    }
+
+    .container .column .bottom {
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .mainStyle {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mainStyle .container .column_left .welcomeText {
+      color: red;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    @media screen and (max-width:575px) {
+      .mainStyle .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mainStyle .header {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .mainStyle .container .column_right {
+        width: 100%;
+        margin: 0;
+        height: 95%;
+      }
+
+      .mainStyle .container .column_left {
+        align-items: center;
+        border-bottom: 2px solid black;
+      }
+
+      .container .column .bottom {
+        padding: 20px;
+      }
+
+      .mainStyle .header .top-right {
+        font-size: 24px;
+        display: block;
+        text-align: center;
+        flex: 1;
+      }
+
+      .mainStyle .header .top-left {
+        float: right;
+        display: none;
+      }
+
+      .menuBar .space1 {
+        padding-right: 5px;
+      }
+
+      .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+      }
+
+      .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .overlay a:hover,
+      .overlay a:focus {
+        color: #f1f1f1;
+      }
+
+      .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        display: block;
+      }
+
+      .header1Parent {
+        text-align: right;
+      }
+
+      .top-menu {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mainStyle">
+    <div class="header">
+      <div class="top-menu"><span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; </span></div>
+      <div class="top-right">My Awesome Webservices</div>
+      <div class="top-left">logout</div>
+    </div>
+    <div class="container">
+      <div class="column column_left">
+        <div class="bottom menuBar">
+          <div class="welcomeText">
+            <p>Welcome,<br>Lavrentijs</p>
+          </div>
+          <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+              <a href="#">Profile</a>
+              <a href="#">Properties</a>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+          <script>
+          </script>
+        </div>
+      </div>
+      <div class="column column_right">
+        <div class="bottom">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius
+            pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper.
+            Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in
+            faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus
+            nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus
+            ullamcorper
+            urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius
+            pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper.
+            Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in
+            faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus
+            nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus
+            ullamcorper
+            urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius
+            pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper.
+            Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in
+            faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus
+            nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus
+            ullamcorper
+            urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
