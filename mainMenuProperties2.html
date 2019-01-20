@@ -94,11 +94,12 @@
       margin-top: 20px;
       margin-left: 20px;
       width: 50%;
+      overflow-y: auto;
     }
 
     .container .column .bottom {
       padding: 40px;
-      overflow-y: auto;
+      /*overflow-y: auto;*/
     }
 
     .mainStyle {
@@ -110,6 +111,7 @@
       color: red;
       font-size: 18px;
       text-align: center;
+
     }
 
     @media screen and (max-width:575px) {
@@ -127,16 +129,18 @@
         width: 100%;
         margin: 0;
         height: 95%;
+        overflow-y: auto;
       }
 
       .mainStyle .container .column_left {
         align-items: center;
         border-bottom: 2px solid black;
+        overflow-y: hidden;
       }
 
       .container .column .bottom {
         padding: 0;
-        overflow-y: unset;
+
       }
 
       .mainStyle .header .top-right {
