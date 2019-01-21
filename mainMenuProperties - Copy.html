@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
   <title>E-services for House Management - main menu properties</title>
-  <script src="scripts/login.js"></script>
+  <script src="/scripts/login.js"></script>
 
   <style type="text/css">
     * {
@@ -21,11 +21,11 @@
       overflow: hidden;
     }
 
-    .menuBar__options {
+    .overlay {
       height: 100%;
     }
 
-    .menuBar__options-content {
+    .overlay-content {
       position: relative;
       top: 25%;
       width: 100%;
@@ -33,7 +33,7 @@
       margin-top: 30px;
     }
 
-    .menuBar__options a {
+    .overlay a {
       padding: 8px;
       text-decoration: none;
       font-size: 25px;
@@ -42,12 +42,12 @@
       transition: 0.3s;
     }
 
-    .menuBar__options a:hover,
-    .menuBar__options a:focus {
+    .overlay a:hover,
+    .overlay a:focus {
       color: gray;
     }
 
-    .menuBar__options .closebtn {
+    .overlay .closebtn {
       position: absolute;
       top: 20px;
       right: 45px;
@@ -81,21 +81,19 @@
       flex-direction: column;
     }
 
-    .column-left {
+    .mainStyle .container .column_left {
       background-color: #eeeeee;
     }
 
-    .column_right {
+    .mainStyle .container .column_right {
       background-color: #eeeeee;
       margin-top: 20px;
       margin-left: 20px;
       width: 50%;
       overflow-y: auto;
-      display: flex;
-      flex-direction: column;
     }
 
-    .column-left__menuBar {
+    .container .column .bottom {
       padding: 40px;
       /*overflow-y: auto;*/
     }
@@ -105,10 +103,11 @@
       flex-direction: column;
     }
 
-    .menuBar__welcomeText_red {
+    .mainStyle .container .column_left .welcomeText {
       color: red;
       font-size: 18px;
       text-align: center;
+
     }
 
     .header__title_middle {
@@ -117,10 +116,6 @@
 
     .header__title_logout {
       font-size: 24px;
-    }
-    .column-right_content {
-      padding: 40px;
-      /*overflow-y: auto;*/
     }
 
 
@@ -142,13 +137,13 @@
         overflow-y: auto;
       }
 
-      .column-left {
+      .mainStyle .container .column_left {
         align-items: center;
         border-bottom: 2px solid black;
         overflow-y: hidden;
       }
 
-      .column-left__menuBar {
+      .container .column .bottom {
         padding: 0;
       }
 
@@ -168,7 +163,7 @@
         padding-right: 5px;
       }*/
 
-      .menuBar__options {
+      .overlay {
         height: 100%;
         width: 0;
         position: fixed;
@@ -181,7 +176,7 @@
         transition: 0.5s;
       }
 
-      .menuBar__options-content {
+      .overlay-content {
         position: relative;
         top: 25%;
         width: 100%;
@@ -189,7 +184,7 @@
         margin-top: 30px;
       }
 
-      .menuBar__options a {
+      .overlay a {
         padding: 8px;
         text-decoration: none;
         font-size: 36px;
@@ -198,12 +193,12 @@
         transition: 0.3s;
       }
 
-      .menuBar__options a:hover,
-      .menuBar__options a:focus {
+      .overlay a:hover,
+      .overlay a:focus {
         color: #f1f1f1;
       }
 
-      .menuBar__options .closebtn {
+      .overlay .closebtn {
         position: absolute;
         top: 20px;
         right: 45px;
@@ -228,14 +223,14 @@
       <div class="header__title_logout">logout</div>
     </div>
     <div class="container">
-      <div class="column-left">
-        <div class="column-left__menuBar ">
-          <div class="menuBar__welcomeText_red">
+      <div class="column column_left">
+        <div class="bottom menuBar">
+          <div class="welcomeText">
             <p>Welcome,<br>Lavrentijs</p>
           </div>
-          <div id="myNav" class="menuBar__options">
+          <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="menuBar__options-content">
+            <div class="overlay-content">
               <a href="#">Profile</a>
               <a href="#">Properties</a>
               <a href="#">Logout</a>
@@ -243,8 +238,8 @@
           </div>
         </div>
       </div>
-      <div class="column_right">
-        <div class="column_right_content">
+      <div class="column column_right">
+        <div class="bottom">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius
             pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper.
             Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in
