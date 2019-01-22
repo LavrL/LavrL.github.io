@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
   <title>E-services for House Management - main menu properties</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="scripts/login.js"></script>
 
   <style type="text/css">
@@ -19,6 +20,7 @@
       font-family: sans-serif;
       display: flex;
       overflow: hidden;
+      width: 100%;
     }
 
     .menuBar__options {
@@ -102,6 +104,7 @@
     .mainStyle {
       display: flex;
       flex-direction: column;
+      width: 100%;
     }
 
     .menuBar__welcomeText_red {
@@ -245,27 +248,32 @@
       </div>
       <div class="column-right">
         <div class="column-right__content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius
-            pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper.
-            Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in
-            faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus
-            nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus
-            ullamcorper
-            urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius
-            pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper.
-            Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in
-            faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus
-            nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus
-            ullamcorper
-            urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam massa, ornare at turpis quis, varius
-            pulvinar lorem. Morbi eleifend nisi eget viverra fermentum. Vivamus interdum dui quis orci placerat semper.
-            Morbi lobortis ex sit amet risus cursus pharetra. Interdum et malesuada fames ac ante ipsum primis in
-            faucibus. Etiam luctus leo augue, non facilisis nunc aliquam sed. Aliquam erat volutpat. Nam laoreet cursus
-            nunc, id tincidunt justo. Nullam elit magna, finibus at aliquam ut, blandit vel magna. Phasellus
-            ullamcorper
-            urna a leo luctus vestibulum. Duis posuere leo ac lectus auctor, convallis aliquam odio gravida.</p>
+          <div class="">
+            <form class="input-form">
+
+              <h1 class="input-form__title input-form__title_big">Profile</h1>
+
+              <label class="input-form__field">
+                <span class="input-form__text-label">E-mail</span>
+                <input class="input-form__text-input" type="text" name="email" autocomplete="on" required>
+              </label>
+
+              <label class="input-form__field">
+                <span class="input-form__text-label">Name</span>
+                <input class="input-form__text-input" type="text" name="name" autocomplete="on" required>
+              </label>
+
+              <label class="input-form__field">
+                <span class="input-form__text-label">password</span>
+                <input class="input-form__text-input" type="password" name="password" autocomplete="on" required>
+              </label>
+
+              <div class="input-form__field">
+                <button class="input-form__button input-form__button_orange" type="button" onclick="window.location.href='#'">Save</button>
+              </div>
+
+            </form>
+          </div>
         </div>
       </div>
     </div>
