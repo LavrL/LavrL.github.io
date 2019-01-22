@@ -78,7 +78,7 @@
       width: 100%;
     }
 
-   /* .mainStyle .container .column {
+    /* .mainStyle .container .column {
       display: flex;
       flex-direction: column;
     }*/
@@ -92,6 +92,16 @@
       margin-top: 20px;
       margin-left: 20px;
       width: 50%;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .column-right__profile {
+      background-color: #eeeeee;
+      margin-top: 20px;
+      margin-left: 20px;
+
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -120,11 +130,40 @@
     .header__title_logout {
       font-size: 24px;
     }
+
     .column-right__content {
       padding: 40px;
     }
+
     .menuBar__options-content_visible {
       visibility: hidden;
+    }
+
+    .input-form__profile {
+      width: 526px;
+      /*padding: 50px;
+      display: block;*/
+    }
+
+    .input-form__field_profile {
+      margin-top: 10px;
+      display: inline-flex;
+      font-size: 14px;
+      width: 400px;
+    }
+
+    .input-form__text-label-profile {
+      color: #14213d;
+      display: flex;
+      flex-direction: row;
+      font-weight: 400;
+      width: 340px;
+    }
+
+    .input-form__title-profile_big {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 20px;
     }
 
 
@@ -216,6 +255,7 @@
         font-size: 20px;
         cursor: pointer
       }
+
       .menuBar__options-content_visible {
         visibility: visible;
       }
@@ -246,31 +286,17 @@
           </div>
         </div>
       </div>
-      <div class="column-right">
+      <div class="column-right__profile">
         <div class="column-right__content">
           <div class="">
-            <form class="input-form">
+            <form class="input-form__profile">
 
-              <h1 class="input-form__title input-form__title_big">Profile</h1>
+              <h1 class="input-form__title input-form__title-profile_big">Profile</h1>
 
-              <label class="input-form__field">
-                <span class="input-form__text-label">E-mail</span>
+              <label class="input-form__field_profile">
+                <span class="input-form__text-label-profile">E-mail</span>
                 <input class="input-form__text-input" type="text" name="email" autocomplete="on" required>
               </label>
-
-              <label class="input-form__field">
-                <span class="input-form__text-label">Name</span>
-                <input class="input-form__text-input" type="text" name="name" autocomplete="on" required>
-              </label>
-
-              <label class="input-form__field">
-                <span class="input-form__text-label">password</span>
-                <input class="input-form__text-input" type="password" name="password" autocomplete="on" required>
-              </label>
-
-              <div class="input-form__field">
-                <button class="input-form__button input-form__button_orange" type="button" onclick="window.location.href='#'">Save</button>
-              </div>
 
             </form>
           </div>
