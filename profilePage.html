@@ -267,6 +267,36 @@
       .menuBar__options-content_visible {
         visibility: visible;
       }
+
+      .column-right__profile {
+        background-color: #eeeeee;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 50px 60px;
+        margin: 0;
+      }
+
+      .input-form__field_profile {
+        margin-top: 10px;
+        display: block;
+        font-size: 14px;
+        width: 300px;
+      }
+
+      .column-right__content {
+        padding: 0;
+      }
+
+      .input-form__title-profile_big {
+        font-size: 28px;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+
+      .input-form__profile {
+        width: 0;
+      }
     }
   </style>
 </head>
@@ -303,7 +333,7 @@
 
               <label class="input-form__field_profile">
                 <span class="input-form__text-label-profile">E-mail</span>
-                <input class="input-form__text-input" type="text" name="email" autocomplete="on" required>
+                <input class="input-form__text-input" type="text" name="email" autocomplete="on" required readonly>
               </label>
 
               <label class="input-form__field_profile">
