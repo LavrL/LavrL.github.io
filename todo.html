@@ -75,6 +75,7 @@ ul li.checked::before {
     top: 0;
     padding: 12px 16px;
 }
+/* Style the view button */
 .close2 {
     position: absolute;
     right: 100px;
@@ -82,11 +83,17 @@ ul li.checked::before {
     padding: 12px 16px;
 }
 
-
 .close:hover {
-  background-color: #f44336;
-  color: white;
+    float: right;
+    background-color: #f44336;
+    color: white;
 }
+.close {
+    float: right;
+    background-color: #f44336;
+    color: white;
+}
+
 
 /* Style the header */
 .header {
@@ -153,6 +160,7 @@ input {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  height: 150px;
 }
 </style>
 </head>
@@ -168,17 +176,18 @@ input {
         <h3 style="padding-left: 40px">Address</h3>
     </div>
     <ul id="myUL">
-        <li>Hit the gym</li>
-        <li class="checked">Pay bills</li>
-        <li>Meet George</li>
-        <li>Buy eggs</li>
-        <li>Read a book</li>
-        <li>Organize office</li>
+        <li id="ex">Brivibas 123</li>
+        <li class="checked">Saharova 34</li>
+        <li>Blaumana 12</li>
+        <li>Dzirnavu 201</li>
+        <li>Elizabetes 83</li>
+        <li>Lacplesa 42</li>
     </ul>
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p id="info">Some text in the Modal..</p>
+            <h2>Property details</h2>
+            <input id="info" type="text" name="password" />
         </div>
     </div>
 
@@ -195,9 +204,10 @@ input {
         //}
 
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
+        // span.onclick = function () {
+        //console.log(this.parentNode);
+        //    modal.style.display = "none";
+        //}
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
@@ -238,11 +248,30 @@ input {
         var close = document.getElementsByClassName("close2");
         //close = $('.myUL');
         for (var i = 0; i < close.length; i++) {
-            close[i].onclick = function () {
+            close[i].onclick = function (event) {
+                //console.log('Первый event target ' + event.tagName);
                 var div = this.parentElement.firstChild.textContent;
-                console.log(div);
                 modal.style.display = "block";
-                document.getElementById('info').innerHTML = div;
+                // document.getElementById('info').innerHTML = div;
+                document.getElementById('info').value = div;
+                //this.parentElement.firstChild.textContent = document.getElementById('info').value;
+                //console.log(this.parentElement.firstChild.textContent);
+                //console.log(document.getElementById('info').value);
+                //this.parentElement.firstChild.textContent = document.getElementById('info').value;
+                console.log(this.parentElement.firstChild.textContent);
+
+                //console.log(document.getElementById('info').value);
+                //this.parentElement.firstChild.textContent = document.getElementById('info').value;
+                //console.log(event.target);
+                console.log(document.getElementById('info').value);
+                document.getElementById("myInput").value = 'mama';
+                var link = document.getElementById('myInput');
+                link.click();
+                //console.log(event);
+                //modal.style.display = "none";
+
+
+                //this.parentElement.firstChild.textContent = document.getElementById('info').value;
             }
         }
 
