@@ -105,7 +105,7 @@
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      height: 300px;
+      /*height: 300px;*/
     }
 
     .column-left__menuBar {
@@ -174,6 +174,178 @@
       width: 150px;
     }
 
+    /* ---- */
+    /* Remove margins and padding from the list */
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Style the list items */
+    ul li {
+      cursor: pointer;
+      position: relative;
+      padding: 12px 8px 12px 40px;
+      list-style-type: none;
+      background: #eee;
+      font-size: 18px;
+      transition: 0.2s;
+
+      /* make the list items unselectable */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Set all odd list items to a different color (zebra-stripes) */
+    ul li:nth-child(odd) {
+      background: #f9f9f9;
+    }
+
+    /* Darker background-color on hover */
+    ul li:hover {
+      background: #ddd;
+    }
+
+    /* When clicked on, add a background color and strike out text */
+    ul li.checked {
+      background: #888;
+      color: #fff;
+      text-decoration: line-through;
+    }
+
+    /* Add a "checked" mark when clicked on */
+    ul li.checked::before {
+      content: '';
+      position: absolute;
+      border-color: #fff;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      top: 10px;
+      left: 16px;
+      transform: rotate(45deg);
+      height: 15px;
+      width: 7px;
+    }
+
+    /* Style the close button */
+    .close {
+      /*position: absolute;
+      right: 0;
+      top: 0;
+      padding: 12px 16px 12px 16px;
+      float: right; */
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .close:hover {
+      cursor: pointer;
+    }
+
+    /* Style the header */
+    .header {
+      background-color: #fca311;
+      padding: 10px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    /* Clear floats after the header */
+    .header:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Style the input */
+    input {
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      width: 75%;
+      padding: 10px;
+      float: left;
+      font-size: 16px;
+    }
+
+    /* Style the "Add" button */
+    .addBtn {
+      padding: 10px;
+      width: 25%;
+      background: #d9d9d9;
+      color: #555;
+      float: left;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 0;
+    }
+
+    .addBtn:hover {
+      background-color: #bbb;
+    }
+
+    /* Style the close button */
+    .close1 {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 12px 16px;
+    }
+
+    /* Style the view button */
+    .close2 {
+      position: absolute;
+      right: 100px;
+      top: 0;
+      padding: 12px 16px;
+    }
+
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 60%;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+    }
+    .input-form__button_gray-default {
+      border: 1px solid grey;
+      background-color: #bbb;
+      background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+      width: 80px;
+    }
 
     @media screen and (max-width:575px) {
       .mainStyle__container {
@@ -298,6 +470,8 @@
         width: 0;
       }
     }
+
+    /* ----------- */
   </style>
 </head>
 
@@ -327,17 +501,151 @@
       <div class="column-right__profile">
         <div class="column-right__content">
           <div class="">
-            <form class="input-form__profile">
+            <div class="input-form__profile">
 
               <h1 class="input-form__title input-form__title-profile_big">Properties</h1>
-
-              
-
-              <div class="input-form__field_profile">
-                <button class="input-form__button input-form__button_orange-profile" type="button" onclick="window.location.href='#'">Add</button>
+              <div id="myDIV" class="header">
+                <input type="text" id="myInput" placeholder="Street name...">
+                <span onclick="newElement()" class="addBtn input-form__button_gray-default">Add</span>
               </div>
+              <ul id="myUL">
+                <li id="ndk7shy5ek">Brivibas 123</li>
+                <li id="mal38fhsk">Saharova 34</li>
+                <li id="jdeueqw2ss">Blaumana 12</li>
+                <li id="jdmuewwi4ss">Gogola 12</li>
+              </ul>
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <h2>Property details</h2>
+                  <input id="info" type="text" name="password" />
+                  <input id="info" type="text" name="password" value="some Text" />
+                  <button onclick="CloseDialogWindow()" class="buttonSave" type="button">Save</button>
+                </div>
+              </div>
+              <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+                // Get the <span> element that closes the modal
+                var spanClose = document.getElementsByClassName("close")[0];
+                //console.log('spanClose ' + spanClose);
 
-            </form>
+                var buttonSaveClose = document.getElementsByClassName("buttonSave")[0];
+
+                // Create a "close" button and append it to each list item
+                var myNodelist = document.getElementsByTagName("LI");
+                var i;
+                for (i = 0; i < myNodelist.length; i++) {
+                  var spanR = document.createElement("BUTTON");
+                  var txtR = document.createTextNode("Remove");
+                  spanR.className = "close1 input-form__button_gray-default";
+
+                  spanR.appendChild(txtR);
+                  myNodelist[i].appendChild(spanR);
+
+                  var spanV = document.createElement("BUTTON");
+                  var txtV = document.createTextNode("View");
+                  spanV.className = "close2 input-form__button_gray-default";
+
+                  spanV.appendChild(txtV);
+                  myNodelist[i].appendChild(spanV);
+                }
+
+                // Click on a close button to hide the current list item
+                var close = document.getElementsByClassName("close1");
+                var i;
+                for (i = 0; i < close.length; i++) {
+                  close[i].onclick = function () {
+                    var div = this.parentElement;
+                    console.log('Closed ' + div);
+                    div.style.display = "none";
+                  }
+                }
+
+                // Click on a 'view' button to view the current list item
+                var close123 = document.getElementsByClassName("close2");
+                console.log('close123 - ' + close123);
+                //close = $('.myUL');
+                for (var i = 0; i < close123.length; i++) {
+                  close123[i].onclick = function () {
+                    var el_ID = event.target.parentNode.id;
+                    console.log('element ID - ' + el_ID);
+
+                    var div1 = this.parentElement.firstChild.textContent;
+                    modal.style.display = "block";
+                    // document.getElementById('info').innerHTML = div;
+                    document.getElementById('info').value = div1;
+                    console.log(this.parentElement.firstChild.textContent);
+
+                    buttonSaveClose.onclick = function () {
+                      console.log(document.getElementById('info').value);
+                      document.getElementById(el_ID).firstChild.textContent = document.getElementById('info').value;
+                      modal.style.display = "none";
+                    }
+                  }
+                }
+
+                // Create a new list item when clicking on the "Add" button
+                function newElement() {
+                  var li = document.createElement("li");
+                  var inputValue = document.getElementById("myInput").value;
+                  var t = document.createTextNode(inputValue);
+                  li.appendChild(t);
+                  if (inputValue === '') {
+                    alert("You must write something!");
+                  } else {
+                    document.getElementById("myUL").appendChild(li);
+                  }
+                  document.getElementById("myInput").value = "";
+
+                  var randomID = Math.random().toString(36).substr(2, 16);
+                  li.setAttribute('id', randomID);
+
+                  var span = document.createElement("BUTTON");
+                  var txt = document.createTextNode("Remove");
+                  span.className = "close1 input-form__button_gray-default";
+                  span.appendChild(txt);
+                  li.appendChild(span);
+
+                  var span1 = document.createElement("BUTTON");
+                  var txt1 = document.createTextNode("View");
+                  span1.className = "close2 input-form__button_gray-default";
+                  span1.appendChild(txt1);
+                  li.appendChild(span1);
+                  console.log(li);
+                  var close123 = document.getElementsByClassName("close2");
+                  //console.log('close123 - ' + close123);
+
+                  for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function () {
+                      console.log('tik')
+                      var div = this.parentElement;
+                      div.style.display = "none";
+                    }
+                  }
+                  for (var i = 0; i < close123.length; i++) {
+                    close123[i].onclick = function () {
+                      var el_ID = event.target.parentNode.id;
+                      console.log('element ID - ' + el_ID);
+
+                      var div1 = this.parentElement.firstChild.textContent;
+                      modal.style.display = "block";
+                      // document.getElementById('info').innerHTML = div;
+                      document.getElementById('info').value = div1;
+                      console.log(this.parentElement.firstChild.textContent);
+
+                      buttonSaveClose.onclick = function () {
+                        console.log(document.getElementById('info').value);
+                        document.getElementById(el_ID).firstChild.textContent = document.getElementById('info').value;
+                        modal.style.display = "none";
+                      }
+                    }
+                  }
+                }
+              </script>
+            </div>
           </div>
         </div>
       </div>
