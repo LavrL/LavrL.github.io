@@ -270,6 +270,7 @@
       padding: 10px;
       float: left;
       font-size: 16px;
+      /*border: 1px solid black; */
     }
 
     /* Style the "Add" button */
@@ -333,18 +334,26 @@
     .modal-content {
       background-color: #fefefe;
       margin: auto;
-      padding: 20px;
+      padding: 40px;
       border: 1px solid #888;
       width: 60%;
       height: 250px;
       display: flex;
       flex-direction: column;
     }
+
     .input-form__button_gray-default {
       border: 1px solid grey;
       background-color: #bbb;
       background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
       width: 80px;
+      border: 1px solid #fca311;
+    }
+    .buttonSave {
+      border: 1px solid #fca311;
+      background-color: #fca311;
+      background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+
     }
 
     @media screen and (max-width:575px) {
@@ -517,10 +526,20 @@
               <div id="myModal" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
-                  <h2>Property details</h2>
-                  <input id="info" type="text" name="password" />
-                  <input id="info" type="text" name="password" value="some Text" />
-                  <button onclick="CloseDialogWindow()" class="buttonSave" type="button">Save</button>
+                  <h2 class="input-form__title input-form__title_big">Property details</h2>
+                  
+                  <label class="input-form__field">
+                      <span class="input-form__text-label">Address</span>
+                      <input class="input-form__text-input" id="info" type="text" name="address" >
+                  </label>
+
+                  <label class="input-form__field">
+                      <span class="input-form__text-label">Description</span>
+                      <input class="input-form__text-input" type="text" name="description" >
+                  </label>
+                  <div class="input-form__field">
+                      <button class="input-form__button input-form__button_orange buttonSave" type="button" onclick="CloseDialogWindow()">Save</button>
+                  </div>
                 </div>
               </div>
               <script>
