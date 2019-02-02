@@ -276,7 +276,7 @@
     /* Style the "Add" button */
     .addBtn {
       padding: 10px;
-      width: 25%;
+      width: 50%;
       background: #d9d9d9;
       color: #555;
       float: left;
@@ -346,7 +346,7 @@
       border: 1px solid grey;
       background-color: #bbb;
       background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
-      width: 80px;
+      /*width: 80px;*/
       border: 1px solid #fca311;
     }
     .buttonSave {
@@ -514,8 +514,8 @@
 
               <h1 class="input-form__title input-form__title-profile_big">Properties</h1>
               <div id="myDIV" class="header">
-                <input type="text" id="myInput" placeholder="Street name...">
-                <span onclick="newElement()" class="addBtn input-form__button_gray-default">Add</span>
+                <!--<input type="text" id="myInput" placeholder="Street name...">-->
+                <span onclick="addNewPropertyItem()" class="addBtn input-form__button_gray-default" id="newItemButton">add new item</span>
               </div>
               <ul id="myUL">
                 <li id="ndk7shy5ek">Brivibas 123</li>
@@ -527,18 +527,16 @@
                 <div class="modal-content">
                   <span class="close">&times;</span>
                   <h2 class="input-form__title input-form__title_big">Property details</h2>
-                  
                   <label class="input-form__field">
                       <span class="input-form__text-label">Address</span>
                       <input class="input-form__text-input" id="info" type="text" name="address" >
                   </label>
-
                   <label class="input-form__field">
                       <span class="input-form__text-label">Description</span>
                       <input class="input-form__text-input" type="text" name="description" >
                   </label>
                   <div class="input-form__field">
-                      <button class="input-form__button input-form__button_orange buttonSave" type="button" onclick="CloseDialogWindow()">Save</button>
+<button class="input-form__button input-form__button_orange buttonSave" type="button" onclick="CloseDialogWindow()">Save</button>
                   </div>
                 </div>
               </div>
@@ -552,6 +550,7 @@
                 //console.log('spanClose ' + spanClose);
 
                 var buttonSaveClose = document.getElementsByClassName("buttonSave")[0];
+                //console.log(buttonSaveClose);
 
                 // Create a "close" button and append it to each list item
                 var myNodelist = document.getElementsByTagName("LI");
@@ -588,6 +587,7 @@
                 console.log('close123 - ' + close123);
                 //close = $('.myUL');
                 for (var i = 0; i < close123.length; i++) {
+                  console.log(i);
                   close123[i].onclick = function () {
                     var el_ID = event.target.parentNode.id;
                     console.log('element ID - ' + el_ID);
@@ -596,20 +596,47 @@
                     modal.style.display = "block";
                     // document.getElementById('info').innerHTML = div;
                     document.getElementById('info').value = div1;
-                    console.log(this.parentElement.firstChild.textContent);
+                    console.log('this parentElement - ' + this.parentElement.firstChild.textContent);
 
                     buttonSaveClose.onclick = function () {
-                      console.log(document.getElementById('info').value);
+                      console.log('VIEW button Save Close - ' + document.getElementById('info').value);
                       document.getElementById(el_ID).firstChild.textContent = document.getElementById('info').value;
                       modal.style.display = "none";
                     }
                   }
                 }
+                //var close123 = document.getElementsByClassName("close2");
+                //document.getElementById('newItemButton').onclick = function() {
+                //  console.log('newItemButton was clicked ');
+                //};
+
+                // Popup with details for new property item
+                function addNewPropertyItem () {
+                  var addItem = true;
+                  modal.style.display = "block";
+                  //var addr = document.getElementById("info").value;
+                  document.getElementById("info").value = "";
+                  var addr = document.getElementById("info").value;
+                  console.log('info field = ' + addr);
+                }
+
+                function CloseDialogWindow () {
+                        console.log('CloseDialogWindow - ' + document.getElementById('info').value);
+                        //console.log(document.getElementById("myInput").value);
+                        //document.getElementById(el_ID).firstChild.textContent = document.getElementById('info').value;
+                        modal.style.display = "none";
+                        //if (addItem) {
+                          newElement();
+                        //}
+                }
 
                 // Create a new list item when clicking on the "Add" button
                 function newElement() {
+                  console.log('Function newElement ');
                   var li = document.createElement("li");
-                  var inputValue = document.getElementById("myInput").value;
+                  //var inputValue = document.getElementById("myInput").value;
+                  var inputValue = document.getElementById("info").value;
+                  console.log('inputValue - ' + inputValue);
                   var t = document.createTextNode(inputValue);
                   li.appendChild(t);
                   if (inputValue === '') {
@@ -617,7 +644,8 @@
                   } else {
                     document.getElementById("myUL").appendChild(li);
                   }
-                  document.getElementById("myInput").value = "";
+                  //document.getElementById("myInput").value = "";
+                  document.getElementById("info").value = "";
 
                   var randomID = Math.random().toString(36).substr(2, 16);
                   li.setAttribute('id', randomID);
@@ -656,11 +684,12 @@
                       console.log(this.parentElement.firstChild.textContent);
 
                       buttonSaveClose.onclick = function () {
-                        console.log(document.getElementById('info').value);
+                        console.log('buttonSaveClose info - ' + document.getElementById('info').value);
                         document.getElementById(el_ID).firstChild.textContent = document.getElementById('info').value;
                         modal.style.display = "none";
                       }
                     }
+                    break;
                   }
                 }
               </script>
