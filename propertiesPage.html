@@ -78,11 +78,6 @@
       width: 100%;
     }
 
-    /* .mainStyle .container .column {
-      display: flex;
-      flex-direction: column;
-    }*/
-
     .column-left {
       background-color: #eeeeee;
     }
@@ -105,7 +100,6 @@
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      /*height: 300px;*/
     }
 
     .column-left__menuBar {
@@ -142,8 +136,6 @@
 
     .input-form__profile {
       width: 526px;
-      /*padding: 50px;
-      display: block;*/
     }
 
     .input-form__field_profile {
@@ -208,34 +200,8 @@
       background: #ddd;
     }
 
-    /* When clicked on, add a background color and strike out text */
-    ul li.checked {
-      background: #888;
-      color: #fff;
-      text-decoration: line-through;
-    }
-
-    /* Add a "checked" mark when clicked on */
-    ul li.checked::before {
-      content: '';
-      position: absolute;
-      border-color: #fff;
-      border-style: solid;
-      border-width: 0 2px 2px 0;
-      top: 10px;
-      left: 16px;
-      transform: rotate(45deg);
-      height: 15px;
-      width: 7px;
-    }
-
     /* Style the close button */
     .close {
-      /*position: absolute;
-      right: 0;
-      top: 0;
-      padding: 12px 16px 12px 16px;
-      float: right; */
       background-color: white;
       color: black;
       display: flex;
@@ -257,7 +223,7 @@
     /* Clear floats after the header */
     .header:after {
       content: "";
-      display: table;
+      display: flex;
       clear: both;
     }
 
@@ -270,7 +236,6 @@
       padding: 10px;
       float: left;
       font-size: 16px;
-      /*border: 1px solid black; */
     }
 
     /* Style the "Add" button */
@@ -288,7 +253,7 @@
     }
 
     .addBtn:hover {
-      background-color: #bbb;
+      background-color: #888;
     }
 
     /* Style the close button */
@@ -346,9 +311,9 @@
       border: 1px solid grey;
       background-color: #bbb;
       background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
-      /*width: 80px;*/
       border: 1px solid #fca311;
     }
+
     .buttonSave {
       border: 1px solid #fca311;
       background-color: #fca311;
@@ -509,53 +474,48 @@
       </div>
       <div class="column-right__profile">
         <div class="column-right__content">
-          <div class="">
+          
             <div class="input-form__profile">
-
               <h1 class="input-form__title input-form__title-profile_big">Properties</h1>
               <div id="myDIV" class="header">
-                <!--<input type="text" id="myInput" placeholder="Street name...">-->
-                <span onclick="addNewPropertyItem()" class="addBtn input-form__button_gray-default" id="newItemButton">add new item</span>
+                <span onclick="addNewPropertyItem()" class="addBtn input-form__button_gray-default" id="newItemButton">add
+                  new item</span>
               </div>
-              <ul id="myUL">
+              <ul id="properties__list">
                 <li id="ndk7shy5ek">Brivibas 123</li>
                 <li id="mal38fhsk">Saharova 34</li>
                 <li id="jdeueqw2ss">Blaumana 12</li>
                 <li id="jdmuewwi4ss">Gogola 12</li>
               </ul>
-              <div id="myModal" class="modal">
+              <div id="properties__form" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
                   <h2 class="input-form__title input-form__title_big">Property details</h2>
                   <label class="input-form__field">
-                      <span class="input-form__text-label">Address</span>
-                      <input class="input-form__text-input" id="info" type="text" name="address" >
+                    <span class="input-form__text-label">Address</span>
+                    <input class="input-form__text-input" id="info" type="text" name="address">
                   </label>
                   <label class="input-form__field">
-                      <span class="input-form__text-label">Description</span>
-                      <input class="input-form__text-input" type="text" name="description" >
+                    <span class="input-form__text-label">Description</span>
+                    <input class="input-form__text-input" type="text" name="description">
                   </label>
                   <div class="input-form__field">
-<button class="input-form__button input-form__button_orange buttonSave" type="button" onclick="CloseDialogWindow()">Save</button>
+                    <button class="input-form__button input-form__button_orange buttonSave" type="button" onclick="CloseDialogWindow()">Save</button>
                   </div>
                 </div>
               </div>
               <script>
                 // Get the modal
-                var modal = document.getElementById('myModal');
-                // Get the button that opens the modal
-                var btn = document.getElementById("myBtn");
+                var modal = document.getElementById('properties__form');
                 // Get the <span> element that closes the modal
                 var spanClose = document.getElementsByClassName("close")[0];
-                //console.log('spanClose ' + spanClose);
 
                 var buttonSaveClose = document.getElementsByClassName("buttonSave")[0];
-                //console.log(buttonSaveClose);
 
                 // Create a "close" button and append it to each list item
                 var myNodelist = document.getElementsByTagName("LI");
-                var i;
-                for (i = 0; i < myNodelist.length; i++) {
+
+                for (var i = 0; i < myNodelist.length; i++) {
                   var spanR = document.createElement("BUTTON");
                   var txtR = document.createTextNode("Remove");
                   spanR.className = "close1 input-form__button_gray-default";
@@ -573,8 +533,8 @@
 
                 // Click on a close button to hide the current list item
                 var close = document.getElementsByClassName("close1");
-                var i;
-                for (i = 0; i < close.length; i++) {
+                
+                for (var i = 0; i < close.length; i++) {
                   close[i].onclick = function () {
                     var div = this.parentElement;
                     console.log('Closed ' + div);
@@ -585,7 +545,7 @@
                 // Click on a 'view' button to view the current list item
                 var close123 = document.getElementsByClassName("close2");
                 console.log('close123 - ' + close123);
-                //close = $('.myUL');
+                
                 for (var i = 0; i < close123.length; i++) {
                   console.log(i);
                   close123[i].onclick = function () {
@@ -605,36 +565,27 @@
                     }
                   }
                 }
-                //var close123 = document.getElementsByClassName("close2");
-                //document.getElementById('newItemButton').onclick = function() {
-                //  console.log('newItemButton was clicked ');
-                //};
-
+                
                 // Popup with details for new property item
-                function addNewPropertyItem () {
+                function addNewPropertyItem() {
                   var addItem = true;
                   modal.style.display = "block";
-                  //var addr = document.getElementById("info").value;
                   document.getElementById("info").value = "";
                   var addr = document.getElementById("info").value;
                   console.log('info field = ' + addr);
                 }
 
-                function CloseDialogWindow () {
-                        console.log('CloseDialogWindow - ' + document.getElementById('info').value);
-                        //console.log(document.getElementById("myInput").value);
-                        //document.getElementById(el_ID).firstChild.textContent = document.getElementById('info').value;
-                        modal.style.display = "none";
-                        //if (addItem) {
-                          newElement();
-                        //}
+                function CloseDialogWindow() {
+                  console.log('CloseDialogWindow - ' + document.getElementById('info').value);
+                  modal.style.display = "none";
+                  newElement();
                 }
 
                 // Create a new list item when clicking on the "Add" button
                 function newElement() {
                   console.log('Function newElement ');
                   var li = document.createElement("li");
-                  //var inputValue = document.getElementById("myInput").value;
+
                   var inputValue = document.getElementById("info").value;
                   console.log('inputValue - ' + inputValue);
                   var t = document.createTextNode(inputValue);
@@ -642,9 +593,9 @@
                   if (inputValue === '') {
                     alert("You must write something!");
                   } else {
-                    document.getElementById("myUL").appendChild(li);
+                    document.getElementById("properties__list").appendChild(li);
                   }
-                  //document.getElementById("myInput").value = "";
+
                   document.getElementById("info").value = "";
 
                   var randomID = Math.random().toString(36).substr(2, 16);
@@ -663,7 +614,6 @@
                   li.appendChild(span1);
                   console.log(li);
                   var close123 = document.getElementsByClassName("close2");
-                  //console.log('close123 - ' + close123);
 
                   for (i = 0; i < close.length; i++) {
                     close[i].onclick = function () {
@@ -679,7 +629,7 @@
 
                       var div1 = this.parentElement.firstChild.textContent;
                       modal.style.display = "block";
-                      // document.getElementById('info').innerHTML = div;
+
                       document.getElementById('info').value = div1;
                       console.log(this.parentElement.firstChild.textContent);
 
@@ -689,12 +639,11 @@
                         modal.style.display = "none";
                       }
                     }
-                    break;
                   }
                 }
               </script>
             </div>
-          </div>
+          
         </div>
       </div>
     </div>
