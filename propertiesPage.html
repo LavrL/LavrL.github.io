@@ -82,16 +82,6 @@
       background-color: #eeeeee;
     }
 
-    .column-right {
-      background-color: #eeeeee;
-      margin-top: 20px;
-      margin-left: 20px;
-      width: 50%;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-    }
-
     .column-right__profile {
       background-color: #eeeeee;
       margin-top: 20px;
@@ -138,33 +128,18 @@
       width: 526px;
     }
 
-    .input-form__field_profile {
-      margin-top: 10px;
-      display: inline-flex;
-      font-size: 14px;
-      width: 400px;
-    }
-
-    .input-form__text-label-profile {
-      color: #14213d;
-      display: flex;
-      flex-direction: row;
-      font-weight: 400;
-      width: 340px;
-    }
-
     .input-form__title-profile_big {
       font-size: 22px;
       font-weight: 400;
       margin-bottom: 20px;
     }
 
-    .input-form__button_orange-profile {
+    /*.input-form__button_orange-profile {
       border: 1px solid #fca311;
       background-color: #fca311;
       background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
       width: 150px;
-    }
+    }*/
 
     /* ---- */
     /* Remove margins and padding from the list */
@@ -308,7 +283,6 @@
     }
 
     .input-form__button_gray-default {
-      border: 1px solid grey;
       background-color: #bbb;
       background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
       border: 1px solid #fca311;
@@ -318,7 +292,6 @@
       border: 1px solid #fca311;
       background-color: #fca311;
       background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
-
     }
 
     @media screen and (max-width:575px) {
@@ -330,13 +303,6 @@
       .mainStyle__header {
         display: flex;
         flex-direction: row;
-      }
-
-      .mainStyle__container .column-right {
-        width: 100%;
-        margin: 0;
-        height: 95%;
-        overflow-y: auto;
       }
 
       .column-left {
@@ -423,12 +389,12 @@
         margin: 0;
       }
 
-      .input-form__field_profile {
+      /*.input-form__field_profile {
         margin-top: 10px;
         display: block;
         font-size: 14px;
         width: 300px;
-      }
+      }*/
 
       .column-right__content {
         padding: 0;
@@ -617,7 +583,7 @@
 
                   for (i = 0; i < close.length; i++) {
                     close[i].onclick = function () {
-                      console.log('tik')
+                      console.log('tik');
                       var div = this.parentElement;
                       div.style.display = "none";
                     }
