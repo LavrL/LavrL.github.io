@@ -7,6 +7,7 @@
   <title>E-services for House Management - main menu properties</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="scripts/login.js"></script>
+  
 
   <style type="text/css">
     * {
@@ -293,6 +294,10 @@
       background-color: #fca311;
       background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
     }
+    .todos {
+            display: flex;
+            flex-direction: row;
+    }
 
     @media screen and (max-width:575px) {
       .mainStyle__container {
@@ -444,15 +449,13 @@
             <div class="input-form__profile">
               <h1 class="input-form__title input-form__title-profile_big">Properties</h1>
               <div id="myDIV" class="header">
-                <span onclick="addNewPropertyItem()" class="addBtn input-form__button_gray-default" id="newItemButton">add
-                  new item</span>
+              <input id="task"><button id="add">Add</button>
+                <!--<span onclick="addNewPropertyItem()" class="addBtn input-form__button_gray-default" id="add">add
+                  new item</span>-->
               </div>
-              <ul id="properties__list">
-                <li id="ndk7shy5ek">Brivibas 123</li>
-                <li id="mal38fhsk">Saharova 34</li>
-                <li id="jdeueqw2ss">Blaumana 12</li>
-                <li id="jdmuewwi4ss">Gogola 12</li>
-              </ul>
+              <div id="todos" class="todos"></div>
+              <!--<ul id="properties__list">
+              </ul>-->
               <div id="properties__form" class="modal">
                 <div class="modal-content">
                   <span class="close">&times;</span>
@@ -471,149 +474,14 @@
                 </div>
               </div>
               <script>
-                // Get the modal
-                var modal = document.getElementById('properties__form');
-                // Get the <span> element that closes the modal
-                var spanClose = document.getElementsByClassName("close")[0];
-
-                var buttonSaveClose = document.getElementsByClassName("buttonSave")[0];
-
-                // Create a "close" button and append it to each list item
-                var myNodelist = document.getElementsByTagName("LI");
-
-                for (var i = 0; i < myNodelist.length; i++) {
-                  var spanR = document.createElement("BUTTON");
-                  var txtR = document.createTextNode("Remove");
-                  spanR.className = "close1 input-form__button_gray-default";
-
-                  spanR.appendChild(txtR);
-                  myNodelist[i].appendChild(spanR);
-
-                  var spanV = document.createElement("BUTTON");
-                  var txtV = document.createTextNode("View");
-                  spanV.className = "close2 input-form__button_gray-default";
-
-                  spanV.appendChild(txtV);
-                  myNodelist[i].appendChild(spanV);
-                }
-
-                // Click on a close button to hide the current list item
-                var close = document.getElementsByClassName("close1");
                 
-                for (var i = 0; i < close.length; i++) {
-                  close[i].onclick = function () {
-                    var div = this.parentElement;
-                    console.log('Closed ' + div);
-                    div.style.display = "none";
-                  }
-                }
-
-                // Click on a 'view' button to view the current list item
-                var close123 = document.getElementsByClassName("close2");
-                console.log('close123 - ' + close123);
-                
-                for (var i = 0; i < close123.length; i++) {
-                  console.log(i);
-                  close123[i].onclick = function () {
-                    var el_ID = event.target.parentNode.id;
-                    console.log('element ID - ' + el_ID);
-
-                    var div1 = this.parentElement.firstChild.textContent;
-                    modal.style.display = "block";
-                    // document.getElementById('info').innerHTML = div;
-                    document.getElementById('info').value = div1;
-                    console.log('this parentElement - ' + this.parentElement.firstChild.textContent);
-
-                    buttonSaveClose.onclick = function () {
-                      console.log('VIEW button Save Close - ' + document.getElementById('info').value);
-                      document.getElementById(el_ID).firstChild.textContent = document.getElementById('info').value;
-                      modal.style.display = "none";
-                    }
-                  }
-                }
-                
-                // Popup with details for new property item
-                function addNewPropertyItem() {
-                  var addItem = true;
-                  modal.style.display = "block";
-                  document.getElementById("info").value = "";
-                  var addr = document.getElementById("info").value;
-                  console.log('info field = ' + addr);
-                }
-
-                function CloseDialogWindow() {
-                  console.log('CloseDialogWindow - ' + document.getElementById('info').value);
-                  modal.style.display = "none";
-                  newElement();
-                }
-
-                // Create a new list item when clicking on the "Add" button
-                function newElement() {
-                  console.log('Function newElement ');
-                  var li = document.createElement("li");
-
-                  var inputValue = document.getElementById("info").value;
-                  console.log('inputValue - ' + inputValue);
-                  var t = document.createTextNode(inputValue);
-                  li.appendChild(t);
-                  if (inputValue === '') {
-                    alert("You must write something!");
-                  } else {
-                    document.getElementById("properties__list").appendChild(li);
-                  }
-
-                  document.getElementById("info").value = "";
-
-                  var randomID = Math.random().toString(36).substr(2, 16);
-                  li.setAttribute('id', randomID);
-
-                  var span = document.createElement("BUTTON");
-                  var txt = document.createTextNode("Remove");
-                  span.className = "close1 input-form__button_gray-default";
-                  span.appendChild(txt);
-                  li.appendChild(span);
-
-                  var span1 = document.createElement("BUTTON");
-                  var txt1 = document.createTextNode("View");
-                  span1.className = "close2 input-form__button_gray-default";
-                  span1.appendChild(txt1);
-                  li.appendChild(span1);
-                  console.log(li);
-                  var close123 = document.getElementsByClassName("close2");
-
-                  for (i = 0; i < close.length; i++) {
-                    close[i].onclick = function () {
-                      console.log('tik');
-                      var div = this.parentElement;
-                      div.style.display = "none";
-                    }
-                  }
-                  for (var i = 0; i < close123.length; i++) {
-                    close123[i].onclick = function () {
-                      var el_ID = event.target.parentNode.id;
-                      console.log('element ID - ' + el_ID);
-
-                      var div1 = this.parentElement.firstChild.textContent;
-                      modal.style.display = "block";
-
-                      document.getElementById('info').value = div1;
-                      console.log(this.parentElement.firstChild.textContent);
-
-                      buttonSaveClose.onclick = function () {
-                        console.log('buttonSaveClose info - ' + document.getElementById('info').value);
-                        document.getElementById(el_ID).firstChild.textContent = document.getElementById('info').value;
-                        modal.style.display = "none";
-                      }
-                    }
-                  }
-                }
               </script>
             </div>
-          
         </div>
       </div>
     </div>
   </div>
+  <script src="scripts/todo.js"></script>
 </body>
 
 </html>
