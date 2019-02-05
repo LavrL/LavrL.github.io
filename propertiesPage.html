@@ -449,7 +449,7 @@
             <div class="input-form__profile">
               <h1 class="input-form__title input-form__title-profile_big">Properties</h1>
               <div id="myDIV" class="header">
-              <input id="task"><button id="add">Add</button>
+              <button onclick="addNewPropertyItem()">Add</button>
                 <!--<span onclick="addNewPropertyItem()" class="addBtn input-form__button_gray-default" id="add">add
                   new item</span>-->
               </div>
@@ -474,7 +474,23 @@
                 </div>
               </div>
               <script>
-                
+                  // Get the modal
+                  var modal = document.getElementById('properties__form');
+                  // Get the <span> element that closes the modal
+                  //var spanClose = document.getElementsByClassName("close")[0];
+                  //var buttonSaveClose = document.getElementsByClassName("buttonSave")[0];
+                  // Popup with details for new property item
+                  function addNewPropertyItem() {
+                      document.getElementById('info').value = '';
+                      modal.style.display = "block";
+                  }
+                  function CloseDialogWindow() {
+                      modal.style.display = "none";
+                      //var addr = document.getElementById("info").value;
+                      //console.log('info value ' + addr);
+                      add();
+                      show();
+                  }
               </script>
             </div>
         </div>

@@ -8,7 +8,7 @@ function get_todos() {
 }
  
 function add() {
-    var task = document.getElementById('task').value;
+    var task = document.getElementById('info').value;
     
     var todos = get_todos();
     
@@ -19,9 +19,9 @@ function add() {
     localStorage.setItem('todo', JSON.stringify(todos));
     
     console.log(todos);
-    show();
+    //show();
  
-    return false;
+    //return false;
 }
  
 function remove() {
@@ -41,7 +41,9 @@ function edit() {
 }
  
 function show() {
+    console.log('Showing ...');
     var todos = get_todos();
+    console.log('todos in show ' + todos);
  
     var html = '<ul>';
     for(var i=0; i<todos.length; i++) {
@@ -63,5 +65,5 @@ function show() {
 
 }
  
-document.getElementById('add').addEventListener('click', add);
-show();
+//document.getElementById('add').addEventListener('click', add);
+//show();
