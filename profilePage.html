@@ -6,6 +6,10 @@
   <meta charset="UTF-8">
   <title>E-services for House Management - main menu properties</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script>
+    if (sessionStorage.getItem('session') !== 'true')
+      window.history.back();
+  </script>
   <script src="scripts/login.js"></script>
 
   <style type="text/css">
@@ -282,7 +286,7 @@
     <div class="mainStyle__header">
       <div class="header__menu-hamburger_left"><span onclick="openNav()">&#9776; </span></div>
       <div class="header__title_middle">My Awesome Webservices</div>
-      <div class="header__title_logout">logout</div>
+      <div class="header__title_logout"><a href="javascript:void(0)" onclick="returnToIndex()">logout</a></div>
     </div>
     <div class="mainStyle__container">
       <div class="column-left">

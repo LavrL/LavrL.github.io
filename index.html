@@ -6,35 +6,36 @@
   <meta charset="UTF-8">
   <title>E-services for House Management - Login</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!-- <script src="/scripts/login.js"></script> -->
+  <script src="scripts/login.js"></script>
 </head>
 
 <body>
-<div class="main-page-container">
-  <form class="input-form">
+  <div class="main-page-container">
+    <form class="input-form">
 
-    <h1 class="input-form__title input-form__title_big">Welcome</h1>
+      <h1 class="input-form__title input-form__title_big">Welcome</h1>
+      <div class="input-form__error-message"></div>
 
-    <label class="input-form__field">
-      <span class="input-form__text-label">username</span>
-      <input class="input-form__text-input" type="text" name="username" autocomplete="on" required>
-    </label>
+      <label class="input-form__field">
+        <span class="input-form__text-label">username</span>
+        <input class="input-form__text-input" type="text" name="username" autocomplete="on" required>
+      </label>
 
-    <label class="input-form__field">
-      <span class="input-form__text-label">password</span>
-      <input class="input-form__text-input" type="password" name="password" autocomplete="on" required>
-    </label>
+      <label class="input-form__field">
+        <span class="input-form__text-label">password</span>
+        <input class="input-form__text-input" type="password" name="password" autocomplete="on" required>
+      </label>
 
-    <div class="input-form__field">
-      <button class="input-form__button input-form__button_orange" type="button" onclick="window.location.href='profilePage.html'">Login</button>
-    </div>
+      <div class="input-form__field">
+        <button class="input-form__button input-form__button_orange" type="button" onclick="login()">Login</button>
+      </div>
 
-    <div class="input-form__field">
-      <a href="register.html" class="input-form__link input-form__link_underlined">Register</a>
-    </div>
+      <div class="input-form__field">
+        <a href="register.html" class="input-form__link input-form__link_underlined">Register</a>
+      </div>
 
-  </form>
-</div>
+    </form>
+  </div>
 
 </body>
 

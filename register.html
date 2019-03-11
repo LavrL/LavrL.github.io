@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <title>E-services for House Management - Register</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!-- <script src="/scripts/login.js"></script> -->
+  <script src="scripts/login.js"></script>
 </head>
 
 <body>
@@ -14,6 +14,7 @@
     <form class="input-form">
 
       <h1 class="input-form__title input-form__title_big">Register Form</h1>
+      <div class="input-form__error-message"></div>
 
       <label class="input-form__field">
         <span class="input-form__text-label">login</span>
@@ -36,7 +37,7 @@
       </label>
 
       <div class="input-form__field">
-        <button class="input-form__button input-form__button_orange" type="button" onclick="window.location.href='index.html'">Register</button>
+        <button class="input-form__button input-form__button_orange" type="button" onclick="register()">Register</button>
       </div>
 
       <div class="input-form__field">  

@@ -87,6 +87,9 @@ body {
 .input-form__link_underlined {
     text-decoration: underline;
 }
+.input-form__error-message {
+    color: red;
+}
 
 @media only screen and (max-width: 600px) {
 
