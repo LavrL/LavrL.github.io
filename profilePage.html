@@ -119,6 +119,7 @@
 
     .header__title_logout {
       font-size: 24px;
+      color: black;
     }
 
     .column-right__content {
@@ -193,6 +194,8 @@
       .header__title_logout {
         float: right;
         display: none;
+        color: black;
+
       }
 
       .menuBar__options {
@@ -286,13 +289,15 @@
     <div class="mainStyle__header">
       <div class="header__menu-hamburger_left"><span onclick="openNav()">&#9776; </span></div>
       <div class="header__title_middle">My Awesome Webservices</div>
-      <div class="header__title_logout"><a href="javascript:void(0)" onclick="returnToIndex()">logout</a></div>
+      <div><a href="javascript:void(0)" class="header__title_logout" onclick="">logout</a></div>
     </div>
     <div class="mainStyle__container">
       <div class="column-left">
         <div class="column-left__menuBar ">
           <div class="menuBar__welcomeText_red">
-            <p>Welcome,<br>Lavrentijs</p>
+            <p>Welcome,<br>
+              <script>sessionStorage.getItem("session");</script>
+            </p>
           </div>
           <div id="myNav" class="menuBar__options">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
