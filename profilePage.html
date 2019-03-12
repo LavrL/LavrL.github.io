@@ -7,9 +7,10 @@
   <title>E-services for House Management - main menu properties</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script>
-    //if (sessionStorage.getItem('session') == 'null')
-    //  window.history.back();
-    console.log(sessionStorage.getItem('session'));
+    if (sessionStorage.getItem('session') == null)
+      window.history.back();
+    //console.log(sessionStorage.getItem('session'));
+    //document.getElementById("welcomeID").innerHTML = sessionStorage.getItem("session");
   </script>
   <script src="scripts/login.js"></script>
 
@@ -110,6 +111,12 @@
 
     .menuBar__welcomeText_red {
       color: red;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .menuBar__welcomeText_black {
+      color: black;
       font-size: 18px;
       text-align: center;
     }
@@ -295,9 +302,9 @@
     <div class="mainStyle__container">
       <div class="column-left">
         <div class="column-left__menuBar ">
-          <div class="menuBar__welcomeText_red">
+          <div class="menuBar__welcomeText_black">
             <p>Welcome,<br>
-              <script>sessionStorage.getItem("session");</script>
+              <p class="menuBar__welcomeText_red"></p>
             </p>
           </div>
           <div id="myNav" class="menuBar__options">
@@ -342,6 +349,12 @@
       </div>
     </div>
   </div>
+  <script>
+    if (sessionStorage.getItem('session') == null)
+      window.history.back();
+    console.log(sessionStorage.getItem('session'));
+    document.getElementsByClassName("menuBar__welcomeText_red")[0].innerHTML = sessionStorage.getItem("session");
+  </script>
 </body>
 
 </html>

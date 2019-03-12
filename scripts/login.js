@@ -40,7 +40,7 @@ function login() {
             console.log("ok");
             console.log(response);
             //console.log(getJSessionId());
-            sessionStorage.setItem("session", username);
+            sessionStorage.setItem("session", document.getElementsByName("username")[0].value);
             console.log('session ' + sessionStorage.getItem('session'));
             window.location.href = "profilePage.html"
         })
