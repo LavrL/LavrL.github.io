@@ -334,14 +334,24 @@
                 <input class="input-form__text-input" type="text" name="name" autocomplete="on" required>
               </label>
 
+              <script>
+                document.getElementsByName("name")[0].value = sessionStorage.getItem('name');
+              </script>
+
               <label class="input-form__field_profile">
                 <span class="input-form__text-label-profile">Password</span>
                 <input class="input-form__text-input" type="password" name="password" autocomplete="on" required>
               </label>
 
+              <script>
+                document.getElementsByName("password")[0].value = sessionStorage.getItem('password');
+              </script>
+
               <div class="input-form__field_profile">
-                <button class="input-form__button input-form__button_orange-profile" type="button" onclick="window.location.href='#'">Save</button>
+                <button class="input-form__button input-form__button_orange-profile" type="button" onclick="saveCredentials()">Save</button>
               </div>
+
+              <p class="menuBar__credentialsSave_black"></p>
 
             </form>
           </div>

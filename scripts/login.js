@@ -31,6 +31,7 @@ function login() {
     let password = document.getElementsByName("password")[0].value;
     let headers = new Headers();
     headers.append("Authorization", make_base_auth(username, password));
+    headers.append("Content-Type", "application/json");
 
     fetch(url, {
         method: "GET",
@@ -38,10 +39,16 @@ function login() {
     }).then(handleErrors)
         .then(response => {
             console.log("ok");
-            console.log(response);
-            //console.log(getJSessionId());
+            response.json().then((data) => {
+                console.log('name - ' + data.content.name);
+                sessionStorage.setItem("name", data.content.name);
+                sessionStorage.setItem("password", document.getElementsByName("password")[0].value)
+            })
+
             sessionStorage.setItem("session", document.getElementsByName("username")[0].value);
+
             console.log('session ' + sessionStorage.getItem('session'));
+            console.log('session name ' + sessionStorage.getItem('name'))
             window.location.href = "profilePage.html"
         })
         .catch(error => {
@@ -85,9 +92,13 @@ function register() {
             let registerForm = document.getElementsByClassName('input-form')[0];
             registerForm.reset();
         })
-
 }
+
 function returnToIndex() {
     sessionStorage.clear();
     window.location.href = "index.html";
+}
+
+function saveCredentials() {
+    document.getElementsByClassName("menuBar__credentialsSave_black")[0].innerHTML = "Data was updated";
 }
