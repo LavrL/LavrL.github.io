@@ -6,420 +6,15 @@
   <meta charset="UTF-8">
   <title>E-services for House Management - main menu properties</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/propertiesPage.css">
+  <link rel="stylesheet" type="text/css" href="css/propertiesPage2.css">
+  
   <script>
     if (sessionStorage.getItem('session') == null)
       window.history.back();
   </script>
   <script src="scripts/login.js"></script>
   <style type="text/css">
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      font-family: sans-serif;
-      display: flex;
-      overflow: hidden;
-      width: 100%;
-    }
-
-    .menuBar__options {
-      height: 100%;
-    }
-
-    .menuBar__options-content {
-      position: relative;
-      top: 25%;
-      width: 100%;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .menuBar__options a {
-      padding: 8px;
-      text-decoration: none;
-      font-size: 25px;
-      color: black;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .menuBar__options a:hover,
-    .menuBar__options a:focus {
-      color: gray;
-    }
-
-    .menuBar__options .closebtn {
-      position: absolute;
-      top: 20px;
-      right: 45px;
-      font-size: 60px;
-      display: none;
-    }
-
-    .header__menu-hamburger_left {
-      display: none;
-    }
-
-    .mainStyle__header {
-      background: #eeeeee;
-      padding: 20px;
-      width: 100%;
-      border-bottom: 5px solid #fca311;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .mainStyle__container {
-      height: 100%;
-      display: flex;
-      background-color: white;
-      width: 100%;
-    }
-
-    .column-left {
-      background-color: #eeeeee;
-    }
-
-    .column-right__profile {
-      background-color: #eeeeee;
-      margin-top: 20px;
-      margin-left: 20px;
-
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .column-left__menuBar {
-      padding: 40px;
-    }
-
-    .mainStyle {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .menuBar__welcomeText_red {
-      color: red;
-      font-size: 18px;
-      text-align: center;
-    }
-    .menuBar__welcomeText_black {
-      color: black;
-      font-size: 18px;
-      text-align: center;
-    }
-
-    .header__title_middle {
-      font-size: 24px;
-    }
-
-    .header__title_logout {
-      font-size: 24px;
-      color: black;
-    }
-
-    .column-right__content {
-      padding: 40px;
-    }
-
-    .menuBar__options-content_visible {
-      visibility: hidden;
-    }
-
-    .input-form__profile {
-      width: 526px;
-    }
-
-    .input-form__title-profile_big {
-      font-size: 22px;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-
-    /*.input-form__button_orange-profile {
-      border: 1px solid #fca311;
-      background-color: #fca311;
-      background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
-      width: 150px;
-    }*/
-
-    /* ---- */
-    /* Remove margins and padding from the list */
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Style the list items */
-    ul li {
-      cursor: pointer;
-      position: relative;
-      padding: 12px 8px 12px 40px;
-      list-style-type: none;
-      background: #eee;
-      font-size: 18px;
-      transition: 0.2s;
-
-      /* make the list items unselectable */
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    /* Set all odd list items to a different color (zebra-stripes) */
-    ul li:nth-child(odd) {
-      background: #f9f9f9;
-    }
-
-    /* Darker background-color on hover */
-    ul li:hover {
-      background: #ddd;
-    }
-
-    /* Style the close button */
-    .close {
-      background-color: white;
-      color: black;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .close:hover {
-      cursor: pointer;
-    }
-
-    /* Style the header */
-    .header {
-      background-color: #fca311;
-      padding: 10px 20px;
-      color: white;
-      text-align: center;
-    }
-
-    /* Clear floats after the header */
-    .header:after {
-      content: "";
-      display: flex;
-      clear: both;
-    }
-
-    /* Style the input */
-    input {
-      margin: 0;
-      border: none;
-      border-radius: 0;
-      width: 75%;
-      padding: 10px;
-      float: left;
-      font-size: 16px;
-    }
-
-    /* Style the "Add" button */
-    .addBtn {
-      padding: 10px;
-      width: 50%;
-      background: #d9d9d9;
-      color: #555;
-      float: left;
-      text-align: center;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-      border-radius: 0;
-    }
-
-    .addBtn:hover {
-      background-color: #888;
-    }
-
-    /* Style the close button */
-    .close1 {
-      position: absolute;
-      right: 0;
-      top: 0;
-      padding: 12px 16px;
-    }
-
-    /* Style the view button */
-    .close2 {
-      position: absolute;
-      right: 100px;
-      top: 0;
-      padding: 12px 16px;
-    }
-
-    .modal {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 1;
-      /* Sit on top */
-      padding-top: 100px;
-      /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.4);
-      /* Black w/ opacity */
-    }
-
-    /* Modal Content */
-    .modal-content {
-      background-color: #fefefe;
-      margin: auto;
-      padding: 40px;
-      border: 1px solid #888;
-      width: 60%;
-      height: 250px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .input-form__button_gray-default {
-      background-color: #bbb;
-      background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
-      border: 1px solid #fca311;
-    }
-
-    .buttonSave {
-      border: 1px solid #fca311;
-      background-color: #fca311;
-      background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
-    }
-
-    @media screen and (max-width:575px) {
-      .mainStyle__container {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .mainStyle__header {
-        display: flex;
-        flex-direction: row;
-      }
-
-      .column-left {
-        align-items: center;
-        border-bottom: 2px solid black;
-        overflow-y: hidden;
-      }
-
-      .column-left__menuBar {
-        padding: 0;
-      }
-
-      .header__title_middle {
-        font-size: 24px;
-        display: block;
-        text-align: center;
-        flex: 1;
-      }
-
-      .header__title_logout {
-        float: right;
-        display: none;
-      }
-
-      .menuBar__options {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.9);
-        overflow-x: hidden;
-        transition: 0.5s;
-      }
-
-      .menuBar__options-content {
-        position: relative;
-        top: 25%;
-        width: 100%;
-        text-align: center;
-        margin-top: 30px;
-      }
-
-      .menuBar__options a {
-        padding: 8px;
-        text-decoration: none;
-        font-size: 36px;
-        color: lightgrey;
-        display: block;
-        transition: 0.3s;
-      }
-
-      .menuBar__options a:hover,
-      .menuBar__options a:focus {
-        color: #f1f1f1;
-      }
-
-      .menuBar__options .closebtn {
-        position: absolute;
-        top: 20px;
-        right: 45px;
-        font-size: 60px;
-        display: block;
-      }
-
-      .header__menu-hamburger_left {
-        display: block;
-        font-size: 20px;
-        cursor: pointer
-      }
-
-      .menuBar__options-content_visible {
-        visibility: visible;
-      }
-
-      .column-right__profile {
-        background-color: #eeeeee;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        padding: 50px 60px;
-        margin: 0;
-      }
-
-      /*.input-form__field_profile {
-        margin-top: 10px;
-        display: block;
-        font-size: 14px;
-        width: 300px;
-      }*/
-
-      .column-right__content {
-        padding: 0;
-      }
-
-      .input-form__title-profile_big {
-        font-size: 28px;
-        font-weight: 400;
-        margin-bottom: 20px;
-      }
-
-      .input-form__profile {
-        width: 0;
-      }
-    }
-
     /* ----------- */
   </style>
 </head>
@@ -444,180 +39,42 @@
             <div class="menuBar__options-content">
               <a href="profilePage.html">Profile</a>
               <a href="propertiesPage.html">Properties</a>
-              <a href="#" class="menuBar__options-content_visible">Logout</a>
+              <a href="javascript:void(0)" class="menuBar__options-content_visible" onclick="returnToIndex()">Logout</a>
             </div>
           </div>
         </div>
       </div>
       <div class="column-right__profile">
         <div class="column-right__content">
-
           <div class="input-form__profile">
             <h1 class="input-form__title input-form__title-profile_big">Properties</h1>
-            <div id="myDIV" class="header">
-              <span onclick="addNewPropertyItem()" class="addBtn input-form__button_gray-default" id="newItemButton">add
-                new item</span>
-            </div>
-            <ul id="properties__list">
-              <li id="ndk7shy5ek">Brivibas 123</li>
-              <li id="mal38fhsk">Saharova 34</li>
-              <li id="jdeueqw2ss">Blaumana 12</li>
-              <li id="jdmuewwi4ss">Gogola 12</li>
+            <form id="todo-form" class="header">
+              <input id="add-input" type="text">
+              <button id="add-button" type="submit" onclick="addUserAddress()">Add</button>
+              <!--<span onclick="addNewPropertyItem()" class="addBtn input-form__button_gray-default" id="newItemButton">add new item</span>-->
+            </form>
+            <ul id="todo-list">
+              <!--<li class="todo-item">
+                <input class="checkbox" type="checkbox">
+                <label class="title">Merkela 21</label>
+                <input class="textfield" type="text">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </li>-->
             </ul>
-            <div id="properties__form" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 class="input-form__title input-form__title_big">Property details</h2>
-                <label class="input-form__field">
-                  <span class="input-form__text-label">Address</span>
-                  <input class="input-form__text-input" id="info" type="text" name="address">
-                </label>
-                <label class="input-form__field">
-                  <span class="input-form__text-label">Description</span>
-                  <input class="input-form__text-input" type="text" name="description">
-                </label>
-                <div class="input-form__field">
-                  <button class="input-form__button input-form__button_orange buttonSave" type="button" onclick="CloseDialogWindow()">Save</button>
-                </div>
-              </div>
-            </div>
+            <script type="text/javascript" src="scripts/app.js" ></script>
             <script>
-              // Get the modal
-              var modal = document.getElementById('properties__form');
-              // Get the <span> element that closes the modal
-              var spanClose = document.getElementsByClassName("close")[0];
+              //var userAddreses1 = JSON.parse(sessionStorage.getItem("userAddreses"));
+              //for (let i = 0; i < userAddreses1.length; i++) {
+              //  const todoItem = createTodoItem(userAddreses1[i]);
+              //  todoList.appendChild(todoItem);
+              //}
+              //function onPageLoad() {
+              //  alert('ok');
+              //}
 
-              var buttonSaveClose = document.getElementsByClassName("buttonSave")[0];
+              window.onload = fetchUserAddreses;
 
-              // Create a "close" button and append it to each list item
-              var myNodelist = document.getElementsByTagName("LI");
-
-              for (var i = 0; i < myNodelist.length; i++) {
-                var spanR = document.createElement("BUTTON");
-                var txtR = document.createTextNode("Remove");
-                spanR.className = "close1 input-form__button_gray-default";
-
-                spanR.appendChild(txtR);
-                myNodelist[i].appendChild(spanR);
-
-                var spanV = document.createElement("BUTTON");
-                var txtV = document.createTextNode("View");
-                spanV.className = "close2 input-form__button_gray-default";
-
-                spanV.appendChild(txtV);
-                myNodelist[i].appendChild(spanV);
-              }
-
-              // Click on a close button to hide the current list item
-              var close = document.getElementsByClassName("close1");
-
-              for (var i = 0; i < close.length; i++) {
-                close[i].onclick = function () {
-                  var div = this.parentElement;
-                  console.log('Closed ' + div);
-                  div.style.display = "none";
-                }
-              }
-
-              // Click on a 'view' button to view the current list item
-              var close123 = document.getElementsByClassName("close2");
-              console.log('close123 - ' + close123);
-
-              for (var i = 0; i < close123.length; i++) {
-                console.log(i);
-                close123[i].onclick = function () {
-                  var el_ID = event.target.parentNode.id;
-                  console.log('element ID - ' + el_ID);
-
-                  var div1 = this.parentElement.firstChild.textContent;
-                  modal.style.display = "block";
-                  // document.getElementById('info').innerHTML = div;
-                  document.getElementById('info').value = div1;
-                  console.log('this parentElement - ' + this.parentElement.firstChild.textContent);
-
-                  buttonSaveClose.onclick = function () {
-                    console.log('VIEW button Save Close - ' + document.getElementById('info').value);
-                    document.getElementById(el_ID).firstChild.textContent = document.getElementById('info').value;
-                    modal.style.display = "none";
-                  }
-                }
-              }
-
-              // Popup with details for new property item
-              function addNewPropertyItem() {
-                var addItem = true;
-                modal.style.display = "block";
-                document.getElementById("info").value = "";
-                var addr = document.getElementById("info").value;
-                console.log('info field = ' + addr);
-              }
-
-              function CloseDialogWindow() {
-                console.log('CloseDialogWindow - ' + document.getElementById('info').value);
-                modal.style.display = "none";
-                newElement();
-              }
-
-              // Create a new list item when clicking on the "Add" button
-              function newElement() {
-                console.log('Function newElement ');
-                var li = document.createElement("li");
-
-                var inputValue = document.getElementById("info").value;
-                console.log('inputValue - ' + inputValue);
-                var t = document.createTextNode(inputValue);
-                li.appendChild(t);
-                if (inputValue === '') {
-                  alert("You must write something!");
-                } else {
-                  document.getElementById("properties__list").appendChild(li);
-                }
-
-                document.getElementById("info").value = "";
-
-                var randomID = Math.random().toString(36).substr(2, 16);
-                li.setAttribute('id', randomID);
-
-                var span = document.createElement("BUTTON");
-                var txt = document.createTextNode("Remove");
-                span.className = "close1 input-form__button_gray-default";
-                span.appendChild(txt);
-                li.appendChild(span);
-
-                var span1 = document.createElement("BUTTON");
-                var txt1 = document.createTextNode("View");
-                span1.className = "close2 input-form__button_gray-default";
-                span1.appendChild(txt1);
-                li.appendChild(span1);
-                console.log(li);
-                var close123 = document.getElementsByClassName("close2");
-
-                for (i = 0; i < close.length; i++) {
-                  close[i].onclick = function () {
-                    console.log('tik');
-                    var div = this.parentElement;
-                    div.style.display = "none";
-                  }
-                }
-                for (var i = 0; i < close123.length; i++) {
-                  close123[i].onclick = function () {
-                    var el_ID = event.target.parentNode.id;
-                    console.log('element ID - ' + el_ID);
-
-                    var div1 = this.parentElement.firstChild.textContent;
-                    modal.style.display = "block";
-
-                    document.getElementById('info').value = div1;
-                    console.log(this.parentElement.firstChild.textContent);
-
-                    buttonSaveClose.onclick = function () {
-                      console.log('buttonSaveClose info - ' + document.getElementById('info').value);
-                      document.getElementById(el_ID).firstChild.textContent = document.getElementById('info').value;
-                      modal.style.display = "none";
-                    }
-                  }
-                }
-              }
             </script>
           </div>
         </div>
@@ -627,7 +84,7 @@
   <script>
     if (sessionStorage.getItem('session') == null)
       window.history.back();
-    console.log(sessionStorage.getItem('session'));
+    console.log('current session - ' + sessionStorage.getItem('session'));
     document.getElementsByClassName("menuBar__welcomeText_red")[0].innerHTML = sessionStorage.getItem("session");
   </script>
 </body>
