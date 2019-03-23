@@ -29,7 +29,7 @@ function login() {
     let url = "https://e-services-backend.herokuapp.com/v1/me";
     let username = document.getElementsByName("username")[0].value;
     let password = document.getElementsByName("password")[0].value;
-    var userAddreses = [];
+    //var userAddreses = [];
     let headers = new Headers();
     headers.append("Authorization", make_base_auth(username, password));
     headers.append("Content-Type", "application/json");
@@ -41,13 +41,10 @@ function login() {
         .then(response => {
             console.log("ok");
             response.json().then((data) => {
-                //console.log(JSON.parse(sessionStorage.getItem('userAddreses')))
-                //console.log('user ID - ' + data.content.id);
 
                 sessionStorage.setItem("name", data.content.name);
                 sessionStorage.setItem("password", document.getElementsByName("password")[0].value)
                 sessionStorage.setItem("userID", data.content.id)
-                //console.log('user address - ' + data.content.address)
             })
 
             sessionStorage.setItem("session", document.getElementsByName("username")[0].value);
@@ -138,18 +135,9 @@ function fetchUserAddreses() {
                 }
                 console.log(JSON.parse(sessionStorage.getItem('userAddreses')))
             })
-
-            //sessionStorage.setItem("session", document.getElementsByName("username")[0].value);
-            //console.log('session ' + sessionStorage.getItem('session'));
-            //console.log('session name ' + sessionStorage.getItem('name'))
-            //console.log('userID ' + sessionStorage.getItem('userID'))
-            // window.location.href = "profilePage.html"
         })
         .catch(error => {
             console.log(error);
-            //document.getElementsByClassName("input-form__error-message")[0].innerHTML = "Incorrect Username or Password";
-            //let loginForm = document.getElementsByClassName('input-form')[0];
-            //loginForm.reset();
         })
 }
 
@@ -162,8 +150,6 @@ function addUserAddress() {
 
     headers.append("Authorization", make_base_auth(username, password));
     headers.append("Content-Type", "application/json");
-
-    //const addInput = document.getElementById('add-input');
 
     fetch(url, {
         method: "POST",
@@ -181,7 +167,6 @@ function addUserAddress() {
         })
         .catch(error => {
             console.log(error);
-
         })
 }
 
@@ -195,8 +180,6 @@ function deleteUserAddress(addressToDelete) {
     headers.append("Authorization", make_base_auth(username, password));
     headers.append("Content-Type", "application/json");
 
-    //const addInput = document.getElementById('add-input');
-
     fetch(url, {
         method: "DELETE",
         headers: headers,
@@ -205,12 +188,10 @@ function deleteUserAddress(addressToDelete) {
         .then(response => {
             console.log("ok");
             response.json().then((data) => {
-                //console.log(JSON.parse(sessionStorage.getItem('userAddreses')))
             })
         })
         .catch(error => {
             console.log(error);
-
         })
 }
 
@@ -225,7 +206,6 @@ function editUserAddress(oldAddress, newAddress) {
     headers.append("Content-Type", "application/json");
 
     console.log('oldAddress -  ' + oldAddress)
-    //const addInput = document.getElementById('add-input');
 
     fetch(url, {
         method: "PUT",
@@ -238,16 +218,14 @@ function editUserAddress(oldAddress, newAddress) {
         .then(response => {
             console.log("ok");
             response.json().then((data) => {
-                //console.log(JSON.parse(sessionStorage.getItem('userAddreses')))
             })
         })
         .catch(error => {
             console.log(error);
-
         })
 }
 
-function sessionCheck(){
+function sessionCheck() {
     if (sessionStorage.getItem('session') == null)
-      window.history.back();
+        window.history.back();
 }
