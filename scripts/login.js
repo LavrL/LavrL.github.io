@@ -26,9 +26,9 @@ function handleErrors(response) {
 }
 
 function login() {
-    let url = "https://e-services-backend.herokuapp.com/v1/me";
-    let username = document.getElementsByName("username")[0].value;
-    let password = document.getElementsByName("password")[0].value;
+    const url = "https://e-services-backend.herokuapp.com/v1/me";
+    const username = document.getElementsByName("username")[0].value;
+    const password = document.getElementsByName("password")[0].value;
     //var userAddreses = [];
     let headers = new Headers();
     headers.append("Authorization", make_base_auth(username, password));
@@ -41,7 +41,6 @@ function login() {
         .then(response => {
             console.log("ok");
             response.json().then((data) => {
-
                 sessionStorage.setItem("name", data.content.name);
                 sessionStorage.setItem("password", document.getElementsByName("password")[0].value)
                 sessionStorage.setItem("userID", data.content.id)
@@ -64,7 +63,7 @@ function login() {
 }
 
 function register() {
-    let url = "https://e-services-backend.herokuapp.com/v1/register";
+    const url = "https://e-services-backend.herokuapp.com/v1/register";
     let login = document.getElementsByName("login")[0].value;
     let password = document.getElementsByName("password")[0].value;
     let passwordRepeat = document.getElementsByName("passwordRepeat")[0].value;
@@ -108,9 +107,9 @@ function saveCredentials() {
 }
 
 function fetchUserAddreses() {
-    let url = "https://e-services-backend.herokuapp.com/v1/me/properties";
-    let username = sessionStorage.getItem('name');
-    let password = sessionStorage.getItem('password');
+    const url = "https://e-services-backend.herokuapp.com/v1/me/properties";
+    const username = sessionStorage.getItem('name');
+    const password = sessionStorage.getItem('password');
     var userAddreses = [];
     let headers = new Headers();
     headers.append("Authorization", make_base_auth(username, password));
@@ -142,9 +141,9 @@ function fetchUserAddreses() {
 }
 
 function addUserAddress() {
-    let url = "https://e-services-backend.herokuapp.com/v1/me/properties";
-    let username = sessionStorage.getItem('name');
-    let password = sessionStorage.getItem('password');
+    const url = "https://e-services-backend.herokuapp.com/v1/me/properties";
+    const username = sessionStorage.getItem('name');
+    const password = sessionStorage.getItem('password');
     //var userAddreses = [];
     let headers = new Headers();
 
@@ -171,9 +170,9 @@ function addUserAddress() {
 }
 
 function deleteUserAddress(addressToDelete) {
-    let url = "https://e-services-backend.herokuapp.com/v1/me/properties/" + addressToDelete;
-    let username = sessionStorage.getItem('name');
-    let password = sessionStorage.getItem('password');
+    const url = "https://e-services-backend.herokuapp.com/v1/me/properties/" + addressToDelete;
+    const username = sessionStorage.getItem('name');
+    const password = sessionStorage.getItem('password');
     //var userAddreses = [];
     let headers = new Headers();
 
@@ -196,9 +195,9 @@ function deleteUserAddress(addressToDelete) {
 }
 
 function editUserAddress(oldAddress, newAddress) {
-    let url = "https://e-services-backend.herokuapp.com/v1/me/properties/" + newAddress;
-    let username = sessionStorage.getItem('name');
-    let password = sessionStorage.getItem('password');
+    const url = "https://e-services-backend.herokuapp.com/v1/me/properties/" + newAddress;
+    const username = sessionStorage.getItem('name');
+    const password = sessionStorage.getItem('password');
     //var userAddreses = [];
     let headers = new Headers();
 
