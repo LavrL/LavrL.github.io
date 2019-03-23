@@ -8,7 +8,6 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/profilePage.css">
 
-  <!--<link rel="stylesheet" type="text/css" href="css/styleNew.css">-->
   <script src="scripts/login.js"></script>
 </head>
 
@@ -81,7 +80,6 @@
   </div>
   <script>
     window.onload = sessionCheck();
-    //console.log(sessionStorage.getItem('session'));
     document.getElementsByClassName("menuBar__welcomeText_red")[0].innerHTML = sessionStorage.getItem("session");
   </script>
 </body>
