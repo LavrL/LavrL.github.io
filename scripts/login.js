@@ -1,7 +1,7 @@
 function readInputValues(event) {
     event.preventDefault();
-    let user = document.getElementById("usernameInput");
-    let pass = document.getElementById("passwordInput");
+    const user = document.getElementById("usernameInput");
+    const pass = document.getElementById("passwordInput");
     console.log('Username - ' + user.value + ' , Password - ' + pass.value);
     window.location.href = 'mainMenuProperties.html';
 }
@@ -13,8 +13,8 @@ function closeNav() {
 }
 
 function make_base_auth(user, password) {
-    let token = user + ":" + password;
-    let hash = btoa(token);
+    const token = user + ":" + password;
+    const hash = btoa(token);
     return "Basic " + hash;
 }
 
@@ -29,7 +29,6 @@ function login() {
     const url = "https://e-services-backend.herokuapp.com/v1/me";
     const username = document.getElementsByName("username")[0].value;
     const password = document.getElementsByName("password")[0].value;
-    //var userAddreses = [];
     let headers = new Headers();
     headers.append("Authorization", make_base_auth(username, password));
     headers.append("Content-Type", "application/json");
@@ -144,7 +143,6 @@ function addUserAddress() {
     const url = "https://e-services-backend.herokuapp.com/v1/me/properties";
     const username = sessionStorage.getItem('name');
     const password = sessionStorage.getItem('password');
-    //var userAddreses = [];
     let headers = new Headers();
 
     headers.append("Authorization", make_base_auth(username, password));
@@ -173,7 +171,6 @@ function deleteUserAddress(addressToDelete) {
     const url = "https://e-services-backend.herokuapp.com/v1/me/properties/" + addressToDelete;
     const username = sessionStorage.getItem('name');
     const password = sessionStorage.getItem('password');
-    //var userAddreses = [];
     let headers = new Headers();
 
     headers.append("Authorization", make_base_auth(username, password));
@@ -198,7 +195,6 @@ function editUserAddress(oldAddress, newAddress) {
     const url = "https://e-services-backend.herokuapp.com/v1/me/properties/" + newAddress;
     const username = sessionStorage.getItem('name');
     const password = sessionStorage.getItem('password');
-    //var userAddreses = [];
     let headers = new Headers();
 
     headers.append("Authorization", make_base_auth(username, password));
