@@ -6,17 +6,14 @@
   <meta charset="UTF-8">
   <title>E-services for House Management - main menu properties</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/propertiesPage.css">
-  <link rel="stylesheet" type="text/css" href="css/propertiesPage2.css">
+  <!--<link rel="stylesheet" type="text/css" href="css/propertiesPage.css">
+  <link rel="stylesheet" type="text/css" href="css/propertiesPage2.css">-->
+
+  <link rel="stylesheet" type="text/css" href="css/propertiesPage1.css">
   
-  <script>
-    if (sessionStorage.getItem('session') == null)
-      window.history.back();
-  </script>
+  <!--<link rel="stylesheet" type="text/css" href="css/propStyle.css">-->
+
   <script src="scripts/login.js"></script>
-  <style type="text/css">
-    /* ----------- */
-  </style>
 </head>
 
 <body>
@@ -51,30 +48,15 @@
             <form id="todo-form" class="header">
               <input id="add-input" type="text">
               <button id="add-button" type="submit" onclick="addUserAddress()">Add</button>
-              <!--<span onclick="addNewPropertyItem()" class="addBtn input-form__button_gray-default" id="newItemButton">add new item</span>-->
             </form>
             <ul id="todo-list">
-              <!--<li class="todo-item">
-                <input class="checkbox" type="checkbox">
-                <label class="title">Merkela 21</label>
-                <input class="textfield" type="text">
-                <button class="edit">Edit</button>
-                <button class="delete">Delete</button>
-              </li>-->
             </ul>
-            <script type="text/javascript" src="scripts/app.js" ></script>
+            <script type="text/javascript" src="scripts/app.js"></script>
             <script>
-              //var userAddreses1 = JSON.parse(sessionStorage.getItem("userAddreses"));
-              //for (let i = 0; i < userAddreses1.length; i++) {
-              //  const todoItem = createTodoItem(userAddreses1[i]);
-              //  todoList.appendChild(todoItem);
-              //}
-              //function onPageLoad() {
-              //  alert('ok');
-              //}
-
-              window.onload = fetchUserAddreses;
-
+              window.onload = function () {
+                var addresses = fetchUserAddreses();
+                var sessionCurrent = sessionCheck();
+              }
             </script>
           </div>
         </div>
@@ -82,9 +64,7 @@
     </div>
   </div>
   <script>
-    if (sessionStorage.getItem('session') == null)
-      window.history.back();
-    console.log('current session - ' + sessionStorage.getItem('session'));
+    //console.log('current session - ' + sessionStorage.getItem('session'));
     document.getElementsByClassName("menuBar__welcomeText_red")[0].innerHTML = sessionStorage.getItem("session");
   </script>
 </body>

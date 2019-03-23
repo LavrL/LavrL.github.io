@@ -246,3 +246,8 @@ function editUserAddress(oldAddress, newAddress) {
 
         })
 }
+
+function sessionCheck(){
+    if (sessionStorage.getItem('session') == null)
+      window.history.back();
+}
