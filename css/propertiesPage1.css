@@ -102,6 +102,7 @@ html, body {
 
 .header__title_middle {
     font-size: 24px;
+    color: black;
 }
 
 .header__title_logout {
@@ -125,64 +126,6 @@ html, body {
     font-size: 22px;
     font-weight: 400;
     margin-bottom: 20px;
-}
-
-/*.input-form__button_orange-profile {
-    border: 1px solid #fca311;
-    background-color: #fca311;
-    background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
-    width: 150px;
-  }*/
-
-/* ---- */
-
-/* Remove margins and padding from the list */
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-/* Style the list items */
-
-ul li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    list-style-type: none;
-    background: #eee;
-    font-size: 18px;
-    transition: 0.2s;
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Set all odd list items to a different color (zebra-stripes) */
-
-ul li:nth-child(odd) {
-    background: #f9f9f9;
-}
-
-/* Darker background-color on hover */
-
-ul li:hover {
-    background: #ddd;
-}
-
-/* Style the close button */
-
-.close {
-    background-color: white;
-    color: black;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.close:hover {
-    cursor: pointer;
 }
 
 /* Style the header */
@@ -212,91 +155,6 @@ input {
     padding: 10px;
     float: left;
     font-size: 16px;
-}
-
-/* Style the "Add" button */
-
-.addBtn {
-    padding: 10px;
-    width: 50%;
-    background: #d9d9d9;
-    color: #555;
-    float: left;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 0;
-}
-
-.addBtn:hover {
-    background-color: #888;
-}
-
-/* Style the close button */
-
-.close1 {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px;
-}
-
-/* Style the view button */
-
-.close2 {
-    position: absolute;
-    right: 100px;
-    top: 0;
-    padding: 12px 16px;
-}
-
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    padding-top: 100px;
-    /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-}
-
-/* Modal Content */
-
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 40px;
-    border: 1px solid #888;
-    width: 60%;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-}
-
-.input-form__button_gray-default {
-    background-color: #bbb;
-    background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
-    border: 1px solid #fca311;
-}
-
-.buttonSave {
-    border: 1px solid #fca311;
-    background-color: #fca311;
-    background-image: linear-gradient(-245deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 /* --propertiesPage2.css */
@@ -349,29 +207,6 @@ button:active {
     background-color: rgba(158, 158, 158, .4);
 }
 
-button.icon {
-    border-radius: 50%;
-    font-size: 24px;
-    height: 32px;
-    margin-left: 0;
-    margin-right: 0;
-    min-width: 32px;
-    width: 32px;
-    padding: 0;
-    overflow: hidden;
-    line-height: normal;
-}
-
-button .material-icons {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-12px, -12px);
-    line-height: 24px;
-    width: 24px;
-    vertical-align: middle;
-}
-
 input {
     font-family: 'Consolas', Arial, Helvetica, sans-serif;
     font-size: 1rem;
@@ -421,20 +256,8 @@ header h1 {
     align-items: center;
 }
 
-.todo-item.completed * {
-    color: lightgray;
-}
-
-.todo-item .checkbox {
-    margin-right: .5rem;
-}
-
 .todo-item .title, .todo-item .textfield {
     margin-right: auto;
-}
-
-.todo-item.completed .title {
-    text-decoration: line-through;
 }
 
 .todo-item.editing .title {
@@ -450,10 +273,6 @@ header h1 {
 }
 
 .todo-item button {
-    opacity: 1;
-}
-
-.todo-item:hover button:not(.checkbox) {
     opacity: 1;
 }
 
@@ -560,12 +379,6 @@ header h1 {
         padding: 50px 60px;
         margin: 0;
     }
-    /*.input-form__field_profile {
-      margin-top: 10px;
-      display: block;
-      font-size: 14px;
-      width: 300px;
-    }*/
     .column-right__content {
         padding: 0;
     }
