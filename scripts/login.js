@@ -13,8 +13,8 @@ function closeNav() {
 }
 
 function make_base_auth(user, password) {
-    const token = user + ":" + password;
-    const hash = btoa(token);
+    let token = user + ":" + password;
+    let hash = btoa(token);
     return "Basic " + hash;
 }
 
@@ -40,7 +40,7 @@ function login() {
         .then(response => {
             console.log("ok");
             response.json().then((data) => {
-                sessionStorage.setItem("name", data.content.name);
+                sessionStorage.setItem("name", document.getElementsByName("username")[0].value);
                 sessionStorage.setItem("password", document.getElementsByName("password")[0].value)
                 sessionStorage.setItem("userID", data.content.id)
             })
@@ -63,9 +63,9 @@ function login() {
 
 function register() {
     const url = "https://e-services-backend.herokuapp.com/v1/register";
-    let login = document.getElementsByName("login")[0].value;
-    let password = document.getElementsByName("password")[0].value;
-    let passwordRepeat = document.getElementsByName("passwordRepeat")[0].value;
+    const login = document.getElementsByName("login")[0].value;
+    const password = document.getElementsByName("password")[0].value;
+    const passwordRepeat = document.getElementsByName("passwordRepeat")[0].value;
     let name = document.getElementsByName("name")[0].value;
 
     let headers = new Headers();
@@ -86,7 +86,7 @@ function register() {
             console.log("ok");
             console.log(response);
             document.getElementsByClassName("input-form__error-message")[0].innerHTML = "";
-            window.location.href = "profilePage.html"
+            window.location.href = "index.html"
         })
         .catch(error => {
             console.log(error);
@@ -107,8 +107,9 @@ function saveCredentials() {
 
 function fetchUserAddreses() {
     const url = "https://e-services-backend.herokuapp.com/v1/me/properties";
-    const username = sessionStorage.getItem('name');
-    const password = sessionStorage.getItem('password');
+    let username = sessionStorage.getItem('name');
+    let password = sessionStorage.getItem('password');
+    console.log('username ' + username + ' password ' + password)
     var userAddreses = [];
     let headers = new Headers();
     headers.append("Authorization", make_base_auth(username, password));
@@ -127,9 +128,11 @@ function fetchUserAddreses() {
                     sessionStorage.setItem("userAddreses", JSON.stringify(userAddreses));
                 }
                 var userAddreses1 = JSON.parse(sessionStorage.getItem("userAddreses"));
-                for (let i = 0; i < userAddreses1.length; i++) {
-                    const todoItem = createTodoItem(userAddreses1[i]);
-                    todoList.appendChild(todoItem);
+                if (userAddreses1 != null) {
+                    for (let i = 0; i < userAddreses1.length; i++) {
+                        const todoItem = createTodoItem(userAddreses1[i]);
+                        todoList.appendChild(todoItem);
+                    }
                 }
                 console.log(JSON.parse(sessionStorage.getItem('userAddreses')))
             })
@@ -140,9 +143,9 @@ function fetchUserAddreses() {
 }
 
 function addUserAddress() {
-    const url = "https://e-services-backend.herokuapp.com/v1/me/properties";
-    const username = sessionStorage.getItem('name');
-    const password = sessionStorage.getItem('password');
+    let url = "https://e-services-backend.herokuapp.com/v1/me/properties";
+    let username = sessionStorage.getItem('name');
+    let password = sessionStorage.getItem('password');
     let headers = new Headers();
 
     headers.append("Authorization", make_base_auth(username, password));
@@ -169,8 +172,8 @@ function addUserAddress() {
 
 function deleteUserAddress(addressToDelete) {
     const url = "https://e-services-backend.herokuapp.com/v1/me/properties/" + addressToDelete;
-    const username = sessionStorage.getItem('name');
-    const password = sessionStorage.getItem('password');
+    let username = sessionStorage.getItem('name');
+    let password = sessionStorage.getItem('password');
     let headers = new Headers();
 
     headers.append("Authorization", make_base_auth(username, password));
