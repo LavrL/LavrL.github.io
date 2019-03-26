@@ -1,4 +1,6 @@
-function readInputValues(event) {
+const backendURL = "https://e-services-backend.herokuapp.com/v1/"
+
+const readInputValues = (event) => {
     event.preventDefault();
     const user = document.getElementById("usernameInput");
     const pass = document.getElementById("passwordInput");
@@ -12,24 +14,24 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
 
-function make_base_auth(user, password) {
-    let token = user + ":" + password;
-    let hash = btoa(token);
+const make_base_auth = (user, password) => {
+    const token = user + ":" + password;
+    const hash = btoa(token);
     return "Basic " + hash;
 }
 
-function handleErrors(response) {
+const handleErrors = (response) => {
     if (!response.ok) {
         throw Error(response.status);
     }
     return response;
 }
 
-function login() {
-    const url = "https://e-services-backend.herokuapp.com/v1/me";
+const login = () => {
+    const url = backendURL + "me";
     const username = document.getElementsByName("username")[0].value;
     const password = document.getElementsByName("password")[0].value;
-    let headers = new Headers();
+    const headers = new Headers();
     headers.append("Authorization", make_base_auth(username, password));
     headers.append("Content-Type", "application/json");
 
@@ -56,19 +58,19 @@ function login() {
         .catch(error => {
             console.log(error);
             document.getElementsByClassName("input-form__error-message")[0].innerHTML = "Incorrect Username or Password";
-            let loginForm = document.getElementsByClassName('input-form')[0];
+            const loginForm = document.getElementsByClassName('input-form')[0];
             loginForm.reset();
         })
 }
 
-function register() {
-    const url = "https://e-services-backend.herokuapp.com/v1/register";
+const register = () => {
+    const url = backendURL + "register";
     const login = document.getElementsByName("login")[0].value;
     const password = document.getElementsByName("password")[0].value;
     const passwordRepeat = document.getElementsByName("passwordRepeat")[0].value;
-    let name = document.getElementsByName("name")[0].value;
+    const name = document.getElementsByName("name")[0].value;
 
-    let headers = new Headers();
+    const headers = new Headers();
     headers.append("Accept", "application/json, text/plain, */*");
     headers.append("Content-Type", "application/json");
 
@@ -91,27 +93,27 @@ function register() {
         .catch(error => {
             console.log(error);
             document.getElementsByClassName("input-form__error-message")[0].innerHTML = "Incorrect input data";
-            let registerForm = document.getElementsByClassName('input-form')[0];
+            const registerForm = document.getElementsByClassName('input-form')[0];
             registerForm.reset();
         })
 }
 
-function returnToIndex() {
+const returnToIndex = () => {
     sessionStorage.clear();
     window.location.href = "index.html";
 }
 
-function saveCredentials() {
+const saveCredentials = () => {
     document.getElementsByClassName("menuBar__credentialsSave_black")[0].innerHTML = "Data was updated";
 }
 
-function fetchUserAddreses() {
-    const url = "https://e-services-backend.herokuapp.com/v1/me/properties";
-    let username = sessionStorage.getItem('name');
-    let password = sessionStorage.getItem('password');
+const fetchUserAddreses = () => {
+    const url = backendURL + "me/properties";
+    const username = sessionStorage.getItem('name');
+    const password = sessionStorage.getItem('password');
     console.log('username ' + username + ' password ' + password)
-    var userAddreses = [];
-    let headers = new Headers();
+    const userAddreses = [];
+    const headers = new Headers();
     headers.append("Authorization", make_base_auth(username, password));
     headers.append("Content-Type", "application/json");
 
@@ -142,11 +144,11 @@ function fetchUserAddreses() {
         })
 }
 
-function addUserAddress() {
-    let url = "https://e-services-backend.herokuapp.com/v1/me/properties";
-    let username = sessionStorage.getItem('name');
-    let password = sessionStorage.getItem('password');
-    let headers = new Headers();
+const addUserAddress = () => {
+    const url = backendURL + "me/properties" 
+    const username = sessionStorage.getItem('name');
+    const password = sessionStorage.getItem('password');
+    const headers = new Headers();
 
     headers.append("Authorization", make_base_auth(username, password));
     headers.append("Content-Type", "application/json");
@@ -170,11 +172,11 @@ function addUserAddress() {
         })
 }
 
-function deleteUserAddress(addressToDelete) {
-    const url = "https://e-services-backend.herokuapp.com/v1/me/properties/" + addressToDelete;
-    let username = sessionStorage.getItem('name');
-    let password = sessionStorage.getItem('password');
-    let headers = new Headers();
+const deleteUserAddress = (addressToDelete) => {
+    const url = backendURL + "me/properties/" + addressToDelete;
+    const username = sessionStorage.getItem('name');
+    const password = sessionStorage.getItem('password');
+    const headers = new Headers();
 
     headers.append("Authorization", make_base_auth(username, password));
     headers.append("Content-Type", "application/json");
@@ -182,7 +184,6 @@ function deleteUserAddress(addressToDelete) {
     fetch(url, {
         method: "DELETE",
         headers: headers,
-
     }).then(handleErrors)
         .then(response => {
             console.log("ok");
@@ -194,11 +195,11 @@ function deleteUserAddress(addressToDelete) {
         })
 }
 
-function editUserAddress(oldAddress, newAddress) {
-    const url = "https://e-services-backend.herokuapp.com/v1/me/properties/" + newAddress;
+const editUserAddress = (oldAddress, newAddress) => {
+    const url = backendURL + "me/properties/" + newAddress;
     const username = sessionStorage.getItem('name');
     const password = sessionStorage.getItem('password');
-    let headers = new Headers();
+    const headers = new Headers();
 
     headers.append("Authorization", make_base_auth(username, password));
     headers.append("Content-Type", "application/json");
@@ -223,7 +224,7 @@ function editUserAddress(oldAddress, newAddress) {
         })
 }
 
-function sessionCheck() {
+const sessionCheck = () => {
     if (sessionStorage.getItem('session') == null)
         window.history.back();
 }
